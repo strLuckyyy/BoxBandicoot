@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://cccg21m1l3xup"]
+
+[ext_resource type="Script" path="res://Nodes/stamina_node.gd" id="1_fpx8f"]
+
+[node name="StaminaNode" type="Node3D" node_paths=PackedStringArray("recover_timer", "tired_timer")]
+process_mode = 1
+script = ExtResource("1_fpx8f")
+recover_timer = NodePath("RecoverTimer")
+tired_timer = NodePath("TiredTimer")
+
+[node name="RecoverTimer" type="Timer" parent="."]
+
+[node name="TiredTimer" type="Timer" parent="."]
+wait_time = 1.5
+
+[connection signal="timeout" from="RecoverTimer" to="." method="_on_recover_timer_timeout"]
+[connection signal="timeout" from="TiredTimer" to="." method="_on_tired_timer_timeout"]
