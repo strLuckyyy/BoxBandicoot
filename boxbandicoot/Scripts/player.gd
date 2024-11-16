@@ -30,7 +30,7 @@ func _physics_process(delta: float):
 	
 	# Skill Input.
 	if Input.is_action_just_pressed("Skill") and stamina_node.can_waste == true:
-		skills_node.use_skill()
+		skills_node.use_skill(delta)
 		
 	if Input.is_action_just_released("Skill"):
 		skills_node.realese_button_skill()

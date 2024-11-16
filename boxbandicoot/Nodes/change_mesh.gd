@@ -9,34 +9,47 @@ class_name Change_Node
 @export var _prism_material: Material
 @export var _sphere_material: Material
 @export var _skills_node: Skills_Node
+@export var _stamina_node: Stamina_Node
 
-@onready var _is_box: bool = false
-@onready var _is_sphere: bool = false
-@onready var _is_prism: bool = false
+var _is_box: bool = false
+var _is_sphere: bool = false
+var _is_prism: bool = false
+
+
+func _ready() -> void:
+	_update_current_mesh()
+	
+	if _is_box: _transform_mesh(BoxMesh)
+	if _is_prism: _transform_mesh(PrismMesh)
+	if _is_sphere: _transform_mesh(SphereMesh)
 
 
 func _physics_process(_delta: float) -> void:
+	_update_current_mesh()
 	_change_mesh()
 
 
 ## Método responsável por transformar o player em alguma forma com base no Input do mesmo.
 func _change_mesh() -> void:
-	_update_current_mesh()
-	
 	if Input.is_action_just_pressed("TransformToBox"):
 		if _is_box == true: return
+		
 		_skills_node.y_direction = 1
 		_skills_node.is_prism = false
+		
 		_transform_mesh(BoxMesh)
 	
 	if Input.is_action_just_pressed("TransformToSphere"):
 		if _is_sphere == true: return
+		
 		_skills_node.y_direction = 1
 		_skills_node.is_prism = false
+		
 		_transform_mesh(SphereMesh)
 	
 	if Input.is_action_just_pressed("TransformToPrism"):
 		if _is_prism == true: return
+		
 		_transform_mesh(PrismMesh)
 
 
@@ -44,7 +57,9 @@ func _change_mesh() -> void:
 func _transform_mesh(mesh: Object) -> void:
 	_player_mesh.set_mesh(mesh.new())
 	_update_current_mesh()
+	
 	_player_mesh.mesh.set_material(_setting_material())
+	_stamina_node.waste(20)
 
 
 ## Evitar do objeto se transformar nele mesmo.
@@ -73,3 +88,10 @@ func _setting_material() -> Material:
 	if _is_box: return _box_material
 	if _is_prism: return _prism_material
 	return _sphere_material
+
+
+## Muda o collision do objeto com base na mesh. No momento não há shape para o Prism.
+## Ainda não implementado.
+func _setting_collision_shape() -> Shape3D:
+	if _is_sphere: return SphereShape3D.new()
+	return BoxShape3D.new()
