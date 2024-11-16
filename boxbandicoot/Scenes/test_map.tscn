@@ -6,8 +6,8 @@
 use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9613, 0, -6.03369)
-size = Vector3(16.3708, 1, 13.0674)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9613, 0.4995, -8.06739)
+size = Vector3(16.3708, 0.001, 21)
 
 [node name="Player" parent="." instance=ExtResource("1_6e1mi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, -8)
