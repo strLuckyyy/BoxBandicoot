@@ -55,13 +55,13 @@ func _box_shape_skill() -> void:
 	# Pulo.
 	if _player.is_on_floor():
 		_player.velocity.y = _JUMP_VELOCITY
-		#_stamina_node.waste(15)
+		_stamina_node.waste(15)
 		_jump_count += 1
 	
 	# Se tacando no chão caso esteja no ar.
 	elif _jump_count == 1 and !_player.is_on_floor():
 		_player.velocity.y = _JUMP_VELOCITY * (-_FALL_VELOCITY)
-		#_stamina_node.waste(5)
+		_stamina_node.waste(5)
 		_jump_count = 0
 
 
@@ -71,7 +71,7 @@ func _sphere_shape_skill() -> void:
 	
 	if _can_waste == false: return 
 	
-	#_stamina_node.waste(25)
+	_stamina_node.waste(25)
 	_sphere_stamina_cost_cooldown.start(_sphere_stamina_cost_cooldown.get_wait_time())
 	_can_waste = false
 
@@ -80,7 +80,7 @@ func _sphere_shape_skill() -> void:
 func _prism_shape_skill() -> void:
 	is_prism = true if is_prism == false else false
 	y_direction = 1 if y_direction == -1 else -1
-	#_stamina_node.waste(30)
+	_stamina_node.waste(30)
 
 
 func _on_sphere_stamina_timeout() -> void:
