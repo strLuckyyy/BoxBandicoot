@@ -2,13 +2,14 @@ extends CharacterBody3D
 
 @export var mouse_sense = 0.01
 @export var stamina_node: Stamina_Node
+@export var skills_node: Skills_Node
+
 @onready var camera_3d: Camera3D = $"Camera_root/Neck_yaw/Neck pitch/SpringArm3D/Camera3D"
 @onready var neck_yaw: Node3D = $Camera_root/Neck_yaw
 @onready var collision_shape_3d: CollisionShape3D = $CollisionShape3D
 @onready var camera_root: Node3D = $Camera_root
 
 const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
 var twist_input = 0
 var pitch_input = 0
 var is_paused = false
@@ -27,14 +28,12 @@ func _physics_process(delta: float):
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 			is_paused = true
 	
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-
-	# Handle jump.
-	if Input.is_action_just_pressed("Jump") and is_on_floor() and stamina_node.can_waste == true:
-		stamina_node.waste(70)
-		velocity.y = JUMP_VELOCITY
+	# Skill Input.
+	if Input.is_action_just_pressed("Skill") and stamina_node.can_waste == true:
+		skills_node.use_skill()
+		
+	if Input.is_action_just_released("Skill"):
+		skills_node.realese_button_skill()
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

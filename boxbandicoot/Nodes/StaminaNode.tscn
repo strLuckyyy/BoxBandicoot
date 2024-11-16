@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://Nodes/stamina_node.gd" id="1_fpx8f"]
 
-[node name="StaminaNode" type="Node3D" node_paths=PackedStringArray("recover_timer", "tired_timer")]
+[node name="StaminaNode" type="Node3D" node_paths=PackedStringArray("_recover_timer", "_tired_timer")]
 process_mode = 1
 script = ExtResource("1_fpx8f")
-recover_timer = NodePath("RecoverTimer")
-tired_timer = NodePath("TiredTimer")
+_recover_timer = NodePath("RecoverTimer")
+_tired_timer = NodePath("TiredTimer")
 
 [node name="RecoverTimer" type="Timer" parent="."]
 

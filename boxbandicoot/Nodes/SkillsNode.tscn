@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://du5w4ppyo2aeq"]
+
+[ext_resource type="Script" path="res://Nodes/skills_node.gd" id="1_pdhct"]
+
+[node name="SkillsNode" type="Node3D" node_paths=PackedStringArray("_sphere_stamina_cost_cooldown")]
+script = ExtResource("1_pdhct")
+_sphere_stamina_cost_cooldown = NodePath("SphereStamina")
+
+[node name="SphereStamina" type="Timer" parent="."]
+
+[connection signal="timeout" from="SphereStamina" to="." method="_on_sphere_stamina_timeout"]

@@ -1,28 +1,29 @@
 [gd_scene load_steps=9 format=3 uid="uid://bvjwdmxvb6hgp"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_3wox6"]
-[ext_resource type="Material" uid="uid://b03rp2akwdair" path="res://Assets/Material/player.tres" id="2_d4t3v"]
 [ext_resource type="Script" path="res://Scripts/camera_root.gd" id="2_xh5uj"]
 [ext_resource type="PackedScene" uid="uid://cccg21m1l3xup" path="res://Nodes/StaminaNode.tscn" id="3_5vt5c"]
 [ext_resource type="PackedScene" uid="uid://du5w4ppyo2aeq" path="res://Nodes/SkillsNode.tscn" id="4_gxikk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5v6mn"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_fhh5m"]
-material = ExtResource("2_d4t3v")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ew2o3"]
+albedo_color = Color(0.439216, 1, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rbe6s"]
+material = SubResource("StandardMaterial3D_ew2o3")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_qi1a8"]
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("stamina_node", "skills_node")]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("stamina_node")]
 script = ExtResource("1_3wox6")
 stamina_node = NodePath("StaminaNode")
-skills_node = NodePath("SkillsNode")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_5v6mn")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
-mesh = SubResource("BoxMesh_fhh5m")
+mesh = SubResource("BoxMesh_rbe6s")
 skeleton = NodePath("../..")
 
 [node name="Camera_root" type="Node3D" parent="."]
@@ -41,7 +42,6 @@ spring_length = 5.0
 
 [node name="StaminaNode" parent="." instance=ExtResource("3_5vt5c")]
 
-[node name="SkillsNode" parent="." node_paths=PackedStringArray("_current_mesh", "_player", "_stamina_node") instance=ExtResource("4_gxikk")]
-_current_mesh = NodePath("../CollisionShape3D/MeshInstance3D")
-_player = NodePath("..")
-_stamina_node = NodePath("../StaminaNode")
+[node name="SkillsNode" parent="." node_paths=PackedStringArray("current_mesh", "player") instance=ExtResource("4_gxikk")]
+current_mesh = NodePath("../CollisionShape3D/MeshInstance3D")
+player = NodePath("..")
