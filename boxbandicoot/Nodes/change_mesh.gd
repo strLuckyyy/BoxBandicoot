@@ -4,12 +4,13 @@ extends Node3D
 ## player e conecte as variáveis necessárias.
 class_name Change_Node
 
+@export var _player: CharacterBody3D
 @export var _player_mesh: MeshInstance3D
 @export var _box_material: Material
 @export var _prism_material: Material
 @export var _sphere_material: Material
 @export var _skills_node: Skills_Node
-@export var _stamina_node: Stamina_Node
+#@export var _stamina_node: Stamina_Node
 
 var _is_box: bool = false
 var _is_sphere: bool = false
@@ -33,17 +34,18 @@ func _physics_process(_delta: float) -> void:
 func _change_mesh() -> void:
 	if Input.is_action_just_pressed("TransformToBox"):
 		if _is_box == true: return
+		if !_player.is_on_floor(): _skills_node.set_jump_count(1)
 		
-		_skills_node.y_direction = 1
-		_skills_node.is_prism = false
+		_skills_node.set_y_direction(1)
+		_skills_node.set_is_prism(false)
 		
 		_transform_mesh(BoxMesh)
 	
 	if Input.is_action_just_pressed("TransformToSphere"):
 		if _is_sphere == true: return
 		
-		_skills_node.y_direction = 1
-		_skills_node.is_prism = false
+		_skills_node.set_y_direction(1)
+		_skills_node.set_is_prism(false)
 		
 		_transform_mesh(SphereMesh)
 	
@@ -59,7 +61,7 @@ func _transform_mesh(mesh: Object) -> void:
 	_update_current_mesh()
 	
 	_player_mesh.mesh.set_material(_setting_material())
-	_stamina_node.waste(20)
+	#_stamina_node.waste(20)
 
 
 ## Evitar do objeto se transformar nele mesmo.

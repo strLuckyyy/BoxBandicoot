@@ -24,8 +24,9 @@ func _physics_process(_delta: float) -> void:
 	
 	_tired_state() 
 	_recover()
-	
-	#print(_current_energy)
+
+
+func get_current_energy() -> int: return _current_energy
 
 
 ## Chame esse método quando o player for "gastar" energia.

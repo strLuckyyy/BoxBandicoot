@@ -1,7 +1,6 @@
 extends CharacterBody3D
 
 @export var mouse_sense = 0.01
-@export var stamina_node: Stamina_Node
 @export var skills_node: Skills_Node
 
 @onready var camera_3d: Camera3D = $"Camera_root/Neck_yaw/Neck pitch/SpringArm3D/Camera3D"
@@ -29,7 +28,7 @@ func _physics_process(delta: float):
 			is_paused = true
 	
 	# Skill Input.
-	if Input.is_action_just_pressed("Skill") and stamina_node.can_waste == true:
+	if Input.is_action_just_pressed("Skill"):
 		skills_node.use_skill()
 		
 	if Input.is_action_just_released("Skill"):
