@@ -9,7 +9,7 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_da1to"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_6r8uj"]
+[sub_resource type="BoxMesh" id="BoxMesh_vq2ax"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_qi1a8"]
 
@@ -27,7 +27,7 @@ skills_node = NodePath("SkillsNode")
 shape = SubResource("BoxShape3D_da1to")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
-mesh = SubResource("BoxMesh_6r8uj")
+mesh = SubResource("BoxMesh_vq2ax")
 skeleton = NodePath("../..")
 
 [node name="Camera_root" type="Node3D" parent="."]
