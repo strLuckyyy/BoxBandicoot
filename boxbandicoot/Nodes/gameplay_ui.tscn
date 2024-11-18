@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnby6uvwdv1f0"]
+
+[ext_resource type="Script" path="res://Scripts/gameplay_ui.gd" id="1_0lop8"]
+
+[node name="Gameplay_UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0lop8")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 28.8
+anchor_bottom = 16.3
+offset_right = -32684.6
+offset_bottom = -10455.4
+
+[node name="TextEdit" type="TextEdit" parent="ColorRect"]
+layout_mode = 0
+offset_right = 493.0
+offset_bottom = 107.0
+theme_override_font_sizes/font_size = 50
+text = "Stamina: "
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 663.0
+offset_top = 4.0
+offset_right = 1153.0
+offset_bottom = 111.0
+
+[node name="TextEdit" type="TextEdit" parent="ColorRect2"]
+layout_mode = 0
+offset_right = 489.0
+offset_bottom = 107.0
+theme_override_font_sizes/font_size = 50
+text = "Type: "
