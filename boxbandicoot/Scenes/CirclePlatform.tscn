@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bua4ftyloi0jr"]
+
+[ext_resource type="Script" path="res://Scenes/circle_platform.gd" id="1_u3i1c"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_4q8pp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_inec6"]
+albedo_color = Color(0.1794, 0.0276, 0.23, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cachq"]
+size = Vector3(5.86443, 0.197327, 2.71257)
+
+[node name="CirclePlatform" type="StaticBody3D"]
+script = ExtResource("1_u3i1c")
+
+[node name="Platform" type="MeshInstance3D" parent="."]
+transform = Transform3D(5.84796, 0, 0, 0, 0.175441, 0, 0, 0, 2.70266, 0, 0, 0)
+mesh = SubResource("BoxMesh_4q8pp")
+surface_material_override/0 = SubResource("StandardMaterial3D_inec6")
+
+[node name="PlatformCollision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00278091, 0.00473022, 0.000495911)
+shape = SubResource("BoxShape3D_cachq")
