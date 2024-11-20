@@ -1,4 +1,5 @@
 extends CharacterBody3D
+class_name Player
 
 @export var mouse_sense = 0.01
 @export var skills_node: Skills_Node

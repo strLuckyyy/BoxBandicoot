@@ -13,9 +13,9 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_qi1a8"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xy8e6"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n3f8s"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_di15c"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uff56"]
 albedo_color = Color(1, 0, 1, 1)
 
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("skills_node")]
@@ -43,17 +43,17 @@ spring_length = 5.0
 
 [node name="Camera3D" type="Camera3D" parent="Camera_root/Neck_yaw/Neck pitch/SpringArm3D"]
 
-[node name="StaminaNode" parent="." instance=ExtResource("3_5vt5c")]
+[node name="ChangeMesh" parent="." node_paths=PackedStringArray("_player", "_player_mesh", "_skills_node") instance=ExtResource("6_by0cx")]
+_player = NodePath("..")
+_player_mesh = NodePath("../CollisionShape3D/MeshInstance3D")
+_box_material = SubResource("StandardMaterial3D_n3f8s")
+_prism_material = SubResource("StandardMaterial3D_uff56")
+_sphere_material = ExtResource("2_d4t3v")
+_skills_node = NodePath("../SkillsNode")
 
 [node name="SkillsNode" parent="." node_paths=PackedStringArray("_current_mesh", "_player", "_stamina_node") instance=ExtResource("4_gxikk")]
 _current_mesh = NodePath("../CollisionShape3D/MeshInstance3D")
 _player = NodePath("..")
 _stamina_node = NodePath("../StaminaNode")
 
-[node name="ChangeMesh" parent="." node_paths=PackedStringArray("_player", "_player_mesh", "_skills_node") instance=ExtResource("6_by0cx")]
-_player = NodePath("..")
-_player_mesh = NodePath("../CollisionShape3D/MeshInstance3D")
-_box_material = ExtResource("2_d4t3v")
-_prism_material = SubResource("StandardMaterial3D_xy8e6")
-_sphere_material = SubResource("StandardMaterial3D_di15c")
-_skills_node = NodePath("../SkillsNode")
+[node name="StaminaNode" parent="." instance=ExtResource("3_5vt5c")]

@@ -12,7 +12,7 @@ var last_mesh = null
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	UI_Update_Form
-	last_stamina = stamina_node._current_energy
+	last_stamina = stamina_node.get_current_energy()
 	text_edit.text = "Stamina: " + str(stamina_node._current_energy)
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.

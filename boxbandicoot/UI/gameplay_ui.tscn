@@ -27,6 +27,7 @@ theme_override_font_sizes/font_size = 50
 text = "Stamina: "
 
 [node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
 offset_left = 663.0
 offset_top = 4.0
 offset_right = 1153.0

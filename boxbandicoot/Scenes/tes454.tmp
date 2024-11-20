@@ -1,14 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cq02mte4enw5s"]
+[gd_scene load_steps=5 format=3 uid="uid://cq02mte4enw5s"]
 
 [ext_resource type="PackedScene" uid="uid://bvjwdmxvb6hgp" path="res://Scenes/player.tscn" id="1_6e1mi"]
 [ext_resource type="PackedScene" uid="uid://d0cdrnjgeyx4y" path="res://Scenes/CircleButton.tscn" id="2_g6uiw"]
 [ext_resource type="PackedScene" uid="uid://bua4ftyloi0jr" path="res://Scenes/CirclePlatform.tscn" id="3_a07os"]
-[ext_resource type="PackedScene" uid="uid://bnby6uvwdv1f0" path="res://UI/gameplay_ui.tscn" id="4_alk5i"]
-[ext_resource type="PackedScene" uid="uid://d2syn4y04lpty" path="res://UI/pause_menu.tscn" id="5_6etj0"]
-[ext_resource type="PackedScene" uid="uid://cv1tc3jam2mfc" path="res://Scenes/ForcedShapeArea.tscn" id="6_ppnjv"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_fymog"]
-size = Vector3(2.50317, 1, 7.16724)
+[ext_resource type="PackedScene" uid="uid://bnby6uvwdv1f0" path="res://Nodes/gameplay_ui.tscn" id="4_alk5i"]
 
 [node name="TestMap" type="CSGCombiner3D"]
 use_collision = true
@@ -38,17 +33,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.48151, 4.56258, -16.8121)
 stamina_node = NodePath("../Player/StaminaNode")
 mesh = NodePath("../Player/CollisionShape3D/MeshInstance3D")
 
-[node name="Pause_Menu" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_6etj0")]
-player = NodePath("../Player")
-
-[node name="ForcedShapeArea" parent="." node_paths=PackedStringArray("change_mesh_node") instance=ExtResource("6_ppnjv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.24956, 1.94178, -5.1223)
-change_mesh_node = NodePath("../Player/ChangeMesh")
-_shape_name = "Prism"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ForcedShapeArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.772339, 0, -0.00500488)
-shape = SubResource("BoxShape3D_fymog")
-
 [editable path="Player"]
-[editable path="ForcedShapeArea"]

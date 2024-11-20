@@ -1,11 +1,15 @@
 extends Node3D
 class_name Skills_Node
 
+
 @export var _current_mesh: MeshInstance3D
-@export var _player: CharacterBody3D
+@export var _player: Player
 @export var _stamina_node: Stamina_Node
 @export var _sphere_stamina_cost_cooldown: Timer
 
+@onready var _is_box: bool = false
+@onready var _is_prism: bool = false
+@onready var _is_sphere: bool = false
 @onready var _can_waste: bool = true
 @onready var _jump_count: int = 0
 @onready var _sphere_cost: int = 25
@@ -14,15 +18,6 @@ class_name Skills_Node
 
 const _JUMP_VELOCITY: float = 9.6
 const _FALL_VELOCITY: float = 2.5
-var _is_box: bool = false
-var _is_prism: bool = false
-var _is_sphere: bool = false
-
-
-func _ready() -> void:
-	_checking_mesh("BoxMesh", true, false, false)
-	_checking_mesh("PrismMesh", false, true, false)
-	_checking_mesh("SphereMesh", false, false, true)
 
 
 func _physics_process(delta: float) -> void:
@@ -54,18 +49,21 @@ func set_jump_count(new_count: int): _jump_count = new_count
 ## a Mesh do objeto e verifica qual mesh está selecionada. Com base nisso, ele executa
 ## a habilidade correspondente.
 func use_skill() -> void:
-	if _current_mesh.mesh.to_string().contains("BoxMesh"):
+	if _current_mesh.mesh.to_string().contains("Box"):
 		_box_shape_skill()
 		
-	if _current_mesh.mesh.to_string().contains("SphereMesh"):
+	if _current_mesh.mesh.to_string().contains("Sphere"):
 		_sphere_shape_skill()
 		
-	if _current_mesh.mesh.to_string().contains("PrismMesh"):
+	if _current_mesh.mesh.to_string().contains("Prism"):
 		_prism_shape_skill()
 
 
-## Chamar para quando o jogador soltar o botão de skill. Na prática, só vai afetar a Esfera.
-func realese_button_skill() -> void: _is_sphere = false
+## Chamar para quando o jogador soltar o botão de skill.
+func realese_button_skill() -> void: 
+	_is_box = false
+	_is_prism = false
+	_is_sphere = false
 
 
 func _gravity(delta: float) -> void: 
@@ -109,14 +107,6 @@ func _prism_shape_skill() -> void:
 	_z_direction = 180 if _current_mesh.rotation_degrees.z == 0 else 0
 	
 	#_stamina_node.waste(30)
-
-
-## Encapsulando e dizendo para o jogo com que mesh o jogo iniciou.
-func _checking_mesh(mesh_name: String, box_value: bool, prism_value: bool, sphere_value: bool) -> void:
-	if _current_mesh.mesh.to_string().contains(mesh_name):
-		_is_box = box_value
-		_is_prism = prism_value
-		_is_sphere = sphere_value
 
 
 func _on_sphere_stamina_timeout() -> void:

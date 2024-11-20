@@ -1,5 +1,5 @@
 extends Control
-@export var player: Player_node
+@export var player: Player
 @onready var button: Button = $Button
 
 # Called when the node enters the scene tree for the first time.
