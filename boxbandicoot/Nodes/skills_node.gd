@@ -38,6 +38,7 @@ func _physics_process(delta: float) -> void:
 		_gravity(delta)
 
 
+## Setters. Use-os se necessário.
 func set_z_direction(new_z_dir: float) -> void: _z_direction = new_z_dir
 func set_y_direction(new_y_dir: int) -> void: _y_direction = new_y_dir
 func set_is_prism(new_value: bool) -> void: _is_prism = new_value

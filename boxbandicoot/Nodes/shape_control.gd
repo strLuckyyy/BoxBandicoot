@@ -21,7 +21,7 @@ func _ready() -> void:
 	_is_lock = false
 	change_appearance_to('Box')
 
-
+## Getters e Setters. Use-os, se precisar de mais adicione.
 func get_player_collision() -> CollisionShape3D: return _player_collision
 func get_player_obj() -> Node3D: return _player_obj
 func get_is_lock() -> bool: return _is_lock
@@ -38,7 +38,9 @@ func set_on_move(on_move: bool) -> void:
 	else: _animation.stop()
 
 
-## Métodos Publicos
+# Métodos Publicos
+## Esse método retorna um valor booleano sobre o shape atual do player.
+## Para usa-lo, coloque no parametro "shape" o nome do shape que você queira verificar.
 func check_current_shape(shape: String = 'Box') -> bool:
 	if _box_node.is_visible() and shape.contains('Box'): 
 		_switch_bool_values(true, false, false); return true
@@ -49,6 +51,8 @@ func check_current_shape(shape: String = 'Box') -> bool:
 	else: return false
 
 
+## Usado para mudar o shape atual do player.
+## Para usa-lo, coloque no parametro "shape" o nome do shape que deseja se transformar.
 func change_appearance_to(shape: String) -> void:
 	if _is_lock == true: return
 	
@@ -98,7 +102,8 @@ func _switch_visibility_values(shape: String) -> void:
 	_prism_node.set_visible(prism)
 	_sphere_node.set_visible(sphere)
 
-'''
+
+''' #debug
 func _is_what() -> void:
 	if _is_box: print('box')
 	if _is_prism: print('prism')
