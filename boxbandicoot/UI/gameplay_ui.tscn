@@ -1,6 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://bnby6uvwdv1f0"]
+[gd_scene load_steps=13 format=3 uid="uid://bnby6uvwdv1f0"]
 
 [ext_resource type="Script" path="res://Scripts/gameplay_ui.gd" id="1_0lop8"]
+[ext_resource type="Texture2D" uid="uid://djprvhd3fa1pl" path="res://Assets/UI/Stamina Frame.png" id="2_ftpjv"]
+[ext_resource type="Texture2D" uid="uid://b2brs3g0kskgq" path="res://Assets/UI/Stamina Bar Under.png" id="3_5tx42"]
+[ext_resource type="Texture2D" uid="uid://bkw44bln46ooe" path="res://Assets/UI/Stamina Bar.png" id="4_70ray"]
+[ext_resource type="FontFile" uid="uid://duaaaqt4n0o6m" path="res://Assets/Fonts/Blockletter.otf" id="5_8tcdp"]
+[ext_resource type="Texture2D" uid="uid://bipnemsy3c3ow" path="res://Assets/UI/Form UI.png" id="6_jwivx"]
+[ext_resource type="Texture2D" uid="uid://c4omgcso2nvh8" path="res://Assets/UI/CubeUi.png" id="7_rhxrk"]
+[ext_resource type="Texture2D" uid="uid://cicmvvdjllfi5" path="res://Assets/UI/Circle UI.png" id="8_wfj08"]
+[ext_resource type="Texture2D" uid="uid://b4urbx3buwdbh" path="res://Assets/UI/Prism UI.png" id="9_wxbpw"]
+[ext_resource type="Texture2D" uid="uid://bqqwa6ekiqyhd" path="res://Assets/UI/Lock UI.png" id="10_slcg2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7g270"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k30en"]
 
 [node name="Gameplay_UI" type="Control"]
 layout_mode = 3
@@ -11,31 +24,79 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0lop8")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_right = 28.8
-anchor_bottom = 16.3
-offset_right = -32684.6
-offset_bottom = -10455.4
+offset_top = 15.0
+offset_right = 480.0
+offset_bottom = 134.0
+texture = ExtResource("2_ftpjv")
 
-[node name="TextEdit" type="TextEdit" parent="ColorRect"]
+[node name="TextureProgressBar" type="TextureProgressBar" parent="TextureRect"]
+z_index = -1
+texture_repeat = 2
+layout_mode = 1
+offset_right = 500.0
+offset_bottom = 119.0
+texture_under = ExtResource("3_5tx42")
+texture_progress = ExtResource("4_70ray")
+
+[node name="TextEdit" type="TextEdit" parent="TextureRect"]
 layout_mode = 0
-offset_right = 493.0
-offset_bottom = 107.0
-theme_override_font_sizes/font_size = 50
+offset_left = 6.0
+offset_top = 27.0
+offset_right = 491.0
+offset_bottom = 134.0
+theme_override_fonts/font = ExtResource("5_8tcdp")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7g270")
 text = "Stamina: "
 
-[node name="ColorRect2" type="ColorRect" parent="."]
-layout_mode = 0
-offset_left = 663.0
-offset_top = 4.0
-offset_right = 1153.0
-offset_bottom = 111.0
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -261.0
+offset_top = 15.0
+offset_right = -111.0
+offset_bottom = 165.0
+grow_horizontal = 0
+texture = ExtResource("6_jwivx")
 
-[node name="TextEdit" type="TextEdit" parent="ColorRect2"]
+[node name="TextureRect" type="TextureRect" parent="TextureRect2"]
+visible = false
 layout_mode = 0
-offset_right = 489.0
-offset_bottom = 107.0
-theme_override_font_sizes/font_size = 50
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("7_rhxrk")
+
+[node name="TextureRect2" type="TextureRect" parent="TextureRect2"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("8_wfj08")
+
+[node name="TextureRect3" type="TextureRect" parent="TextureRect2"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("9_wxbpw")
+
+[node name="TextEdit" type="TextEdit" parent="TextureRect2"]
+layout_mode = 0
+offset_top = 150.0
+offset_right = 222.0
+offset_bottom = 219.0
+theme_override_fonts/font = ExtResource("5_8tcdp")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_k30en")
 text = "Type: "
+
+[node name="Shape lock" type="TextureRect" parent="TextureRect2"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("10_slcg2")

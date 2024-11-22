@@ -1,0 +1,59 @@
+[gd_scene load_steps=10 format=3 uid="uid://bvjwdmxvb6hgp"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_3wox6"]
+[ext_resource type="PackedScene" uid="uid://ds0xju7ee57jn" path="res://Assets/Modelos 3D/cubo.fbx" id="2_qip8u"]
+[ext_resource type="Script" path="res://Scripts/camera_root.gd" id="2_xh5uj"]
+[ext_resource type="PackedScene" uid="uid://cccg21m1l3xup" path="res://Nodes/StaminaNode.tscn" id="3_5vt5c"]
+[ext_resource type="PackedScene" uid="uid://du5w4ppyo2aeq" path="res://Nodes/SkillsNode.tscn" id="4_gxikk"]
+[ext_resource type="Script" path="res://Nodes/change_shape2.gd" id="5_1oo63"]
+[ext_resource type="PackedScene" uid="uid://55iu71qecucb" path="res://Nodes/ChangeShape.tscn" id="6_by0cx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_da1to"]
+size = Vector3(1.15576, 1.4472, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qi1a8"]
+
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("skills_node")]
+script = ExtResource("1_3wox6")
+skills_node = NodePath("SkillsNode")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_da1to")
+
+[node name="Box" parent="CollisionShape3D" instance=ExtResource("2_qip8u")]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0)
+
+[node name="Skeleton3D" parent="CollisionShape3D/Box" index="0"]
+bones/0/rotation = Quaternion(-0.60518, 0.00488746, -0.0151087, 0.79593)
+bones/3/rotation = Quaternion(-0.0391843, 0, 0, 0.999232)
+bones/3/scale = Vector3(1, 1, 1)
+bones/4/rotation = Quaternion(0.858675, 0, 0, 0.51252)
+bones/4/scale = Vector3(1, 1, 1)
+bones/5/rotation = Quaternion(0.00205164, 0.0153075, 0.00422349, 0.999872)
+bones/6/rotation = Quaternion(-0.0541647, 2.54374e-09, 1.61821e-09, 0.998532)
+bones/7/rotation = Quaternion(0.0144109, 0.0592037, 0.00953204, 0.998096)
+
+[node name="Camera_root" type="Node3D" parent="."]
+script = ExtResource("2_xh5uj")
+
+[node name="Neck_yaw" type="Node3D" parent="Camera_root"]
+
+[node name="Neck pitch" type="Node3D" parent="Camera_root/Neck_yaw"]
+
+[node name="SpringArm3D" type="SpringArm3D" parent="Camera_root/Neck_yaw/Neck pitch"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.68923, 0)
+shape = SubResource("SphereShape3D_qi1a8")
+spring_length = 5.0
+
+[node name="Camera3D" type="Camera3D" parent="Camera_root/Neck_yaw/Neck pitch/SpringArm3D"]
+
+[node name="ChangeMesh" parent="." instance=ExtResource("6_by0cx")]
+script = ExtResource("5_1oo63")
+
+[node name="SkillsNode" parent="." node_paths=PackedStringArray("_player", "_stamina_node") instance=ExtResource("4_gxikk")]
+_player = NodePath("..")
+_stamina_node = NodePath("../StaminaNode")
+
+[node name="StaminaNode" parent="." instance=ExtResource("3_5vt5c")]
+
+[editable path="CollisionShape3D/Box"]

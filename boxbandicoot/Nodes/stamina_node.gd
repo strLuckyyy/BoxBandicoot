@@ -27,6 +27,7 @@ func _physics_process(_delta: float) -> void:
 
 
 func get_current_energy() -> int: return _current_energy
+func get_current_energy_str() -> String: return str(_current_energy)
 
 
 ## Chame esse método quando o player for "gastar" energia.

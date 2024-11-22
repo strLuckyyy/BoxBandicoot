@@ -43,9 +43,7 @@ _shape_name = "Prism"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.898926, 1.03522, 0.155121)
 shape = SubResource("BoxShape3D_lbsr8")
 
-[node name="Gameplay_UI" parent="." node_paths=PackedStringArray("stamina_node", "shape_control") instance=ExtResource("4_alk5i")]
-stamina_node = NodePath("../Player/StaminaNode")
-shape_control = NodePath("../Player/ShapeControlNode")
+[node name="Gameplay_UI" parent="." instance=ExtResource("4_alk5i")]
 
 [node name="Pause_Menu" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_6etj0")]
 player = NodePath("../Player")

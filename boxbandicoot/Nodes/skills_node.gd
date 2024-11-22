@@ -2,9 +2,10 @@ extends Node3D
 class_name Skills_Node
 
 
-@export var _current_mesh: MeshInstance3D
 @export var _player: Player
 @export var _stamina_node: Stamina_Node
+@export var _shape_control: Shape_Control_Node
+@export var _camera: Node3D
 @export var _sphere_stamina_cost_cooldown: Timer
 
 @onready var _is_box: bool = false
@@ -17,7 +18,7 @@ class_name Skills_Node
 @onready var _z_direction: float = 180
 
 const _JUMP_VELOCITY: float = 9.6
-const _FALL_VELOCITY: float = 2.5
+const _FALL_VELOCITY: float = 3.2
 
 
 func _physics_process(delta: float) -> void:
@@ -27,21 +28,20 @@ func _physics_process(delta: float) -> void:
 		_sphere_stamina_cost()
 	elif not _player.is_on_floor(): _gravity(delta) 
 	
+	print(_is_prism)
+	
 	# Execução da habilidade em prisma. Literalmente, inverte a gravidade.
-	if _is_prism: 
-		_current_mesh.rotation_degrees.z = _z_direction
+	if _is_prism:
+		_shape_control.get_player_collision().rotation_degrees.z = _z_direction
 		_gravity(delta)
-	elif not _player.is_on_floor(): _gravity(delta)
+	elif not _player.is_on_floor():
+		_gravity(delta)
 
 
 func set_z_direction(new_z_dir: float) -> void: _z_direction = new_z_dir
-
 func set_y_direction(new_y_dir: int) -> void: _y_direction = new_y_dir
-
 func set_is_prism(new_value: bool) -> void: _is_prism = new_value
-
 func set_sphere_waste_cooldown(new_cd: float): _sphere_stamina_cost_cooldown.set_wait_time(new_cd)
-
 func set_jump_count(new_count: int): _jump_count = new_count
 
 
@@ -49,20 +49,13 @@ func set_jump_count(new_count: int): _jump_count = new_count
 ## a Mesh do objeto e verifica qual mesh está selecionada. Com base nisso, ele executa
 ## a habilidade correspondente.
 func use_skill() -> void:
-	if _current_mesh.mesh.to_string().contains("Box"):
-		_box_shape_skill()
-		
-	if _current_mesh.mesh.to_string().contains("Sphere"):
-		_sphere_shape_skill()
-		
-	if _current_mesh.mesh.to_string().contains("Prism"):
-		_prism_shape_skill()
+	if _shape_control.check_current_shape("Box"): _box_shape_skill()
+	if _shape_control.check_current_shape("Sphere"): _sphere_shape_skill()
+	if _shape_control.check_current_shape("Prism"): _prism_shape_skill()
 
 
 ## Chamar para quando o jogador soltar o botão de skill.
-func realese_button_skill() -> void: 
-	_is_box = false
-	_is_prism = false
+func realese_button_skill() -> void:
 	_is_sphere = false
 
 
@@ -104,7 +97,7 @@ func _sphere_stamina_cost() -> void:
 func _prism_shape_skill() -> void:
 	_is_prism = true
 	_y_direction = 1 if _y_direction == -1 else -1
-	_z_direction = 180 if _current_mesh.rotation_degrees.z == 0 else 0
+	_z_direction = 180 if _shape_control.get_player_collision().rotation_degrees.z == 0 else 0
 	
 	#_stamina_node.waste(30)
 

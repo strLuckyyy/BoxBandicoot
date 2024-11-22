@@ -3,6 +3,7 @@ class_name Player
 
 @export var mouse_sense = 0.01
 @export var skills_node: Skills_Node
+@export var shape_control: Shape_Control_Node
 
 @onready var camera_3d: Camera3D = $"Camera_root/Neck_yaw/Neck pitch/SpringArm3D/Camera3D"
 @onready var neck_yaw: Node3D = $Camera_root/Neck_yaw
@@ -31,9 +32,13 @@ func _physics_process(delta: float):
 	# Skill Input.
 	if Input.is_action_just_pressed("Skill"):
 		skills_node.use_skill()
-		
+	
 	if Input.is_action_just_released("Skill"):
 		skills_node.realese_button_skill()
+	
+	if Input.is_action_just_pressed("TransformToBox"): shape_control.change_appearance_to('Box')
+	if Input.is_action_just_pressed("TransformToPrism"): shape_control.change_appearance_to('Prism')
+	if Input.is_action_just_pressed("TransformToSphere"): shape_control.change_appearance_to('Sphere')
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -42,10 +47,12 @@ func _physics_process(delta: float):
 	
 	
 	if direction:
+		shape_control.set_on_move(true)
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 		collision_shape_3d.rotation_degrees.y = lerp(neck_yaw.rotation_degrees.y, camera_root.yaw, camera_root.yaw_accel * delta)
 	else:
+		shape_control.set_on_move(false)
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 

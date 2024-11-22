@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://55iu71qecucb"]
+
+[ext_resource type="Script" path="res://Nodes/change_shape.gd" id="1_4liu4"]
+
+[node name="ShapeControlNode" type="Node3D"]
+script = ExtResource("1_4liu4")
