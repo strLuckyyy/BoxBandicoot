@@ -15,6 +15,7 @@ var _is_lock: bool
 var _is_box: bool
 var _is_prism: bool
 var _is_sphere: bool
+var _double_lock: Array[bool] = [true, true, true] # 0 = box, 1 = sphere, 2 = prism
 
 
 func _ready() -> void:
@@ -36,6 +37,8 @@ func set_shape_lock(shape: String = '') -> void:
 func set_on_move(on_move: bool) -> void:
 	if on_move: _animation.play('Take 001')
 	else: _animation.stop()
+func set_double_lock(value_box: bool = true, value_sphere: bool = true, value_prism: bool = true) -> void:
+	_double_lock = [value_box, value_sphere, value_prism]
 
 
 # Métodos Publicos
@@ -79,22 +82,26 @@ func _switch_visibility_values(shape: String) -> void:
 	var prism: bool
 	var sphere: bool
 	
-	if shape.contains('Prism'):
-		box = false
-		prism = true
-		sphere = false
-	
-	elif shape.contains('Box'):
+	if shape.contains('Box'):
+		if _double_lock[0] == false: return
 		box = true
 		prism = false
 		sphere = false
 	
 	elif shape.contains('Sphere'):
+		if _double_lock[1] == false: return
 		box = false
 		prism = false
 		sphere = true
 	
-	else: return
+	elif shape.contains('Prism'):
+		if _double_lock[2] == false: return
+		box = false
+		prism = true
+		sphere = false
+	else: 
+		print('Shape doesnt contain any shape name.')
+		return
 	
 	_switch_bool_values(box, prism, sphere)
 	
