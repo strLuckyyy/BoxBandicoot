@@ -19,8 +19,8 @@ var max_pitch = 30
 
 func _input(event: InputEvent):
 	if event is InputEventMouseMotion:
-		yaw += event.relative.x * yaw_sense
-		pitch += event.relative.y * pitch_sense
+		yaw -= event.relative.x * yaw_sense
+		pitch -= event.relative.y * pitch_sense
 		
 func _physics_process(_delta: float):
 	#print(pitch)
