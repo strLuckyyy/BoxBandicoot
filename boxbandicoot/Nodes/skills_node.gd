@@ -39,9 +39,6 @@ func _physics_process(delta: float) -> void:
 
 
 ## Getter
-func get_is_prism() -> bool: 
-	if _prism_state != 'isnt_transformed': return true
-	return false
 func is_prism_skill_active() -> bool:
 	if _prism_state == 'on': return true
 	return false

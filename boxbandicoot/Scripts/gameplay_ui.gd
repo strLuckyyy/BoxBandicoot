@@ -31,10 +31,12 @@ func _process(delta: float) -> void:
 	texture_progress_bar.value = stamina_node.get_current_energy()
 	if last_stamina != stamina_node.get_current_energy():
 		update_stamina_UI()
-	#if (variavel que controla a trava de forma) = true:
-	#	shape_lock.visible = true
-	#else:
-		#shape_lock.visible = false
+		
+	if shape_control.get_is_lock():
+		shape_lock.visible = true
+	else:
+		shape_lock.visible = false
+	
 	UI_Update_Form()
 	
 func update_stamina_UI():

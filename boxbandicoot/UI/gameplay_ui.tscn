@@ -1,15 +1,15 @@
 [gd_scene load_steps=13 format=3 uid="uid://bnby6uvwdv1f0"]
 
 [ext_resource type="Script" path="res://Scripts/gameplay_ui.gd" id="1_0lop8"]
-[ext_resource type="Texture2D" uid="uid://djprvhd3fa1pl" path="res://Assets/UI/Stamina Frame.png" id="2_ftpjv"]
-[ext_resource type="Texture2D" uid="uid://b2brs3g0kskgq" path="res://Assets/UI/Stamina Bar Under.png" id="3_5tx42"]
-[ext_resource type="Texture2D" uid="uid://bkw44bln46ooe" path="res://Assets/UI/Stamina Bar.png" id="4_70ray"]
-[ext_resource type="FontFile" uid="uid://duaaaqt4n0o6m" path="res://Assets/Fonts/Blockletter.otf" id="5_8tcdp"]
-[ext_resource type="Texture2D" uid="uid://bipnemsy3c3ow" path="res://Assets/UI/Form UI.png" id="6_jwivx"]
-[ext_resource type="Texture2D" uid="uid://c4omgcso2nvh8" path="res://Assets/UI/CubeUi.png" id="7_rhxrk"]
-[ext_resource type="Texture2D" uid="uid://cicmvvdjllfi5" path="res://Assets/UI/Circle UI.png" id="8_wfj08"]
-[ext_resource type="Texture2D" uid="uid://b4urbx3buwdbh" path="res://Assets/UI/Prism UI.png" id="9_wxbpw"]
-[ext_resource type="Texture2D" uid="uid://bqqwa6ekiqyhd" path="res://Assets/UI/Lock UI.png" id="10_slcg2"]
+[ext_resource type="Texture2D" uid="uid://djprvhd3fa1pl" path="res://UI/Stamina Frame.png" id="2_ftpjv"]
+[ext_resource type="Texture2D" uid="uid://b2brs3g0kskgq" path="res://UI/Stamina Bar Under.png" id="3_5tx42"]
+[ext_resource type="Texture2D" uid="uid://bkw44bln46ooe" path="res://UI/Stamina Bar.png" id="4_70ray"]
+[ext_resource type="FontFile" uid="uid://duaaaqt4n0o6m" path="res://Fonts/Blockletter.otf" id="5_8tcdp"]
+[ext_resource type="Texture2D" uid="uid://bipnemsy3c3ow" path="res://UI/Form UI.png" id="6_jwivx"]
+[ext_resource type="Texture2D" uid="uid://c4omgcso2nvh8" path="res://UI/CubeUi.png" id="7_rhxrk"]
+[ext_resource type="Texture2D" uid="uid://cicmvvdjllfi5" path="res://UI/Circle UI.png" id="8_wfj08"]
+[ext_resource type="Texture2D" uid="uid://b4urbx3buwdbh" path="res://UI/Prism UI.png" id="9_wxbpw"]
+[ext_resource type="Texture2D" uid="uid://bbtjvfmn0yb12" path="res://UI/Lock UI.png" id="10_o7yc8"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7g270"]
 
@@ -99,4 +99,4 @@ visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("10_slcg2")
+texture = ExtResource("10_o7yc8")
