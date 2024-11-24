@@ -9,16 +9,17 @@ class_name Skills_Node
 @export var _sphere_stamina_cost_cooldown: Timer
 
 @onready var _is_box: bool = false
-@onready var _is_prism: bool = false
 @onready var _is_sphere: bool = false
 @onready var _can_waste: bool = true
 @onready var _jump_count: int = 0
 @onready var _sphere_cost: int = 25
 @onready var _y_direction: int = 1
 @onready var _z_direction: float = 180
+@onready var _prism_state: String = 'isnt_transformed'
 
 const _JUMP_VELOCITY: float = 9.6
 const _FALL_VELOCITY: float = 3.2
+
 
 
 func _physics_process(delta: float) -> void:
@@ -26,22 +27,28 @@ func _physics_process(delta: float) -> void:
 	if _is_sphere and _stamina_node.can_waste == true: 
 		_player.velocity.y += 0.35
 		_sphere_stamina_cost()
-	elif not _player.is_on_floor(): _gravity(delta) 
 	
-	print(_is_prism)
-	
-	# Execução da habilidade em prisma. Literalmente, inverte a gravidade.
-	if _is_prism:
+	elif _prism_state != 'isnt_transformed':
 		_shape_control.get_player_collision().rotation_degrees.z = _z_direction
 		_gravity(delta)
-	elif not _player.is_on_floor():
-		_gravity(delta)
+	
+	elif not _player.is_on_floor(): _gravity(delta)
+	
+	print(_z_direction)
+	print(_prism_state)
 
+
+## Getter
+func get_is_prism() -> bool: 
+	if _prism_state != 'isnt_transformed': return true
+	return false
+func is_prism_skill_active() -> bool:
+	if _prism_state == 'on': return true
+	return false
 
 ## Setters. Use-os se necessário.
 func set_z_direction(new_z_dir: float) -> void: _z_direction = new_z_dir
 func set_y_direction(new_y_dir: int) -> void: _y_direction = new_y_dir
-func set_is_prism(new_value: bool) -> void: _is_prism = new_value
 func set_sphere_waste_cooldown(new_cd: float): _sphere_stamina_cost_cooldown.set_wait_time(new_cd)
 func set_jump_count(new_count: int): _jump_count = new_count
 
@@ -96,7 +103,12 @@ func _sphere_stamina_cost() -> void:
 
 ## Não chamar esse método! Use "use_skill" ao invés disso.
 func _prism_shape_skill() -> void:
-	_is_prism = true
+	const states: Array[String] = ['off', 'on', 'isnt_transformed']
+	
+	# Definindo o prism state
+	if _prism_state == states[2]: _prism_state = states[1]
+	else: _prism_state = states[0] if _prism_state == states[1] else states[1]
+	
 	_y_direction = 1 if _y_direction == -1 else -1
 	_z_direction = 180 if _shape_control.get_player_collision().rotation_degrees.z == 0 else 0
 	
