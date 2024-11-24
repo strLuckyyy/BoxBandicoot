@@ -15,12 +15,14 @@ var _is_lock: bool
 var _is_box: bool
 var _is_prism: bool
 var _is_sphere: bool
-var _double_lock: Array[bool] = [true, true, true] # 0 = box, 1 = sphere, 2 = prism
+var _double_lock: Array[bool] # 0 = box, 1 = sphere, 2 = prism
 
 
 func _ready() -> void:
 	_is_lock = false
+	_double_lock = [true, true, true] # 0 = box, 1 = sphere, 2 = prism
 	change_appearance_to('Box')
+
 
 ## Getters e Setters. Use-os, se precisar de mais adicione.
 func get_player_collision() -> CollisionShape3D: return _player_collision
@@ -39,6 +41,22 @@ func set_on_move(on_move: bool) -> void:
 	else: _animation.stop()
 func set_double_lock(value_box: bool = true, value_sphere: bool = true, value_prism: bool = true) -> void:
 	_double_lock = [value_box, value_sphere, value_prism]
+	if _double_lock[0]:
+		change_appearance_to('Box')
+		return
+	if _double_lock[1]:
+		change_appearance_to('Sphere')
+		return
+	if _double_lock[2]:
+		change_appearance_to('Prism')
+		return
+
+
+func _physics_process(delta: float) -> void:
+	print('shapes')
+	print('box', _double_lock[0])
+	print('sphere', _double_lock[1])
+	print('prism', _double_lock[2])
 
 
 # Métodos Publicos

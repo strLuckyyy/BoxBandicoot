@@ -33,9 +33,6 @@ func _physics_process(delta: float) -> void:
 		_gravity(delta)
 	
 	elif not _player.is_on_floor(): _gravity(delta)
-	
-	print(_z_direction)
-	print(_prism_state)
 
 
 ## Getter

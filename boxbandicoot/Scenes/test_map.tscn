@@ -37,7 +37,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.48151, 4.56258, -16.8121)
 [node name="ForcedShapeArea" parent="." node_paths=PackedStringArray("_shape_control_node") instance=ExtResource("6_ppnjv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.96498, 1.18781, -10.4503)
 _shape_control_node = NodePath("../Player/ShapeControlNode")
-_shape_name = "Prism"
+_can_become_box = false
+_can_become_prism = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ForcedShapeArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.898926, 1.03522, 0.155121)
