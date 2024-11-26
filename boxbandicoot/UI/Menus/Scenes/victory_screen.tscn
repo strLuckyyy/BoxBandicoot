@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://4csi3yupsgec"]
+
+[ext_resource type="Script" path="res://Scripts/victory_screen.gd" id="1_ocuvi"]
+[ext_resource type="FontFile" uid="uid://duaaaqt4n0o6m" path="res://Assets/Fonts/Blockletter.otf" id="1_r8exq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0fcc7"]
+
+[node name="victory_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ocuvi")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+color = Color(0.345098, 0.533333, 1, 1)
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.0
+offset_top = -38.0
+offset_right = 85.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+action_mode = 0
+text = "Return to menu
+"
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -231.0
+offset_top = 56.0
+offset_right = 232.0
+offset_bottom = 134.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_r8exq")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0fcc7")
+text = "You won! Congratulations!"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
