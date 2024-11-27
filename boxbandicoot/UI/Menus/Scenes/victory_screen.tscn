@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://4csi3yupsgec"]
 
-[ext_resource type="Script" path="res://Scripts/victory_screen.gd" id="1_ocuvi"]
-[ext_resource type="FontFile" uid="uid://duaaaqt4n0o6m" path="res://Assets/Fonts/Blockletter.otf" id="1_r8exq"]
+[ext_resource type="FontFile" uid="uid://duaaaqt4n0o6m" path="res://Fonts/Blockletter.otf" id="1_r8exq"]
+[ext_resource type="Script" path="res://UI/Menus/Scripts/victory_screen.gd" id="1_wcdlg"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0fcc7"]
 
@@ -12,7 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ocuvi")
+script = ExtResource("1_wcdlg")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -1

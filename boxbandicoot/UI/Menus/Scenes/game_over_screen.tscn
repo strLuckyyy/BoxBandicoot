@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://edsfsv8t3eij"]
 
-[ext_resource type="FontFile" uid="uid://duaaaqt4n0o6m" path="res://Assets/Fonts/Blockletter.otf" id="1_h71qk"]
-[ext_resource type="Script" path="res://Scripts/game_over_screen.gd" id="1_vvoga"]
+[ext_resource type="FontFile" uid="uid://duaaaqt4n0o6m" path="res://Fonts/Blockletter.otf" id="1_h71qk"]
+[ext_resource type="Script" path="res://UI/Menus/Scripts/game_over_screen.gd" id="1_omqyn"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v0u3l"]
 
@@ -12,7 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_vvoga")
+script = ExtResource("1_omqyn")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://06ax5suhhhgd"]
+
+[ext_resource type="PackedScene" uid="uid://34eme04en3ft" path="res://Assets/Modelos 3D/teste_botão_quadrado_anim1.fbx" id="1_xpgp4"]
+
+[node name="teste_botão_quadrado_anim1" instance=ExtResource("1_xpgp4")]
+transform = Transform3D(28.3639, 0, 0, 0, 28.3639, 0, 0, 0, 28.3639, 0, 0, 0)

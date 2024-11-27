@@ -15,11 +15,12 @@ var twist_input = 0
 var pitch_input = 0
 var is_paused = false
 
+
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
+
 func _physics_process(delta: float):
-	
 	if is_paused == true:
 		if Input.is_action_just_pressed("Esc"):
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED 

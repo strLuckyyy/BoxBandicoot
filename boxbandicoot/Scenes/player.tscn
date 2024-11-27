@@ -1,12 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://bvjwdmxvb6hgp"]
+[gd_scene load_steps=11 format=3 uid="uid://bvjwdmxvb6hgp"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_3wox6"]
 [ext_resource type="PackedScene" uid="uid://cpsr2v23etxhu" path="res://Assets/Modelos 3D/3_formas.fbx" id="2_8ffr1"]
-[ext_resource type="Script" path="res://Scripts/camera_root.gd" id="2_xh5uj"]
 [ext_resource type="PackedScene" uid="uid://cccg21m1l3xup" path="res://Nodes/StaminaNode.tscn" id="3_5vt5c"]
 [ext_resource type="Texture2D" uid="uid://cpbknsjcj7mi4" path="res://Assets/Material/cubo.jpg" id="3_hhjpj"]
 [ext_resource type="PackedScene" uid="uid://du5w4ppyo2aeq" path="res://Nodes/SkillsNode.tscn" id="4_gxikk"]
-[ext_resource type="Script" path="res://Nodes/shape_control.gd" id="5_1oo63"]
+[ext_resource type="Script" path="res://Scripts/Nova camera (adaptada á habilidade do prisma)/camera_root.gd" id="4_lxkqo"]
 [ext_resource type="PackedScene" uid="uid://55iu71qecucb" path="res://Nodes/ShapeControl.tscn" id="6_by0cx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l0qax"]
@@ -48,8 +47,10 @@ visible = false
 [node name="esfera2_esfera1_pSphere1" parent="CollisionShape3D/OBJ" index="4"]
 visible = false
 
-[node name="Camera_root" type="Node3D" parent="."]
-script = ExtResource("2_xh5uj")
+[node name="Camera_root" type="Node3D" parent="." node_paths=PackedStringArray("stam", "shape_control")]
+script = ExtResource("4_lxkqo")
+stam = NodePath("../StaminaNode")
+shape_control = NodePath("../ShapeControlNode")
 
 [node name="Neck_yaw" type="Node3D" parent="Camera_root"]
 
@@ -63,7 +64,6 @@ spring_length = 5.0
 [node name="Camera3D" type="Camera3D" parent="Camera_root/Neck_yaw/Neck pitch/SpringArm3D"]
 
 [node name="ShapeControlNode" parent="." node_paths=PackedStringArray("_player", "_box_node", "_prism_node", "_sphere_node", "_skills_node") instance=ExtResource("6_by0cx")]
-script = ExtResource("5_1oo63")
 _player = NodePath("..")
 _box_node = NodePath("../CollisionShape3D/OBJ/cubo_polySurface4")
 _prism_node = NodePath("../CollisionShape3D/OBJ/prisma3_prisma2_prisma1_polySurface7")

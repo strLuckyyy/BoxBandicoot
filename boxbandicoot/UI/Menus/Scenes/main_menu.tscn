@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b43gw8vdbuyip"]
 
-[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_0gu8k"]
-[ext_resource type="FontFile" uid="uid://duaaaqt4n0o6m" path="res://Assets/Fonts/Blockletter.otf" id="1_1xnyr"]
+[ext_resource type="FontFile" uid="uid://duaaaqt4n0o6m" path="res://Fonts/Blockletter.otf" id="1_1xnyr"]
+[ext_resource type="Script" path="res://UI/Menus/Scripts/main_menu.gd" id="1_8vu5g"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oqim4"]
 
@@ -12,8 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_0gu8k")
-first_level = "res://Scenes/test_map.tscn"
+script = ExtResource("1_8vu5g")
 
 [node name="Sart_Game" type="Button" parent="."]
 layout_mode = 1

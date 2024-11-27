@@ -5,7 +5,7 @@ extends Control
 
 
 func _on_sart_game_pressed() -> void:
-	get_tree().change_scene_to_file(first_level)
+	get_tree().change_scene_to_file('res://main_map.tscn')
 	#Adicione o caminho do primeiro nivel no exporte ao lado 
 
 

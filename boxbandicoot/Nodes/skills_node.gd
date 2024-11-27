@@ -29,14 +29,14 @@ func _physics_process(delta: float) -> void:
 		_sphere_stamina_cost()
 	
 	elif _prism_state != 'isnt_transformed':
-		_shape_control.get_player_collision().rotation_degrees.z = _z_direction
+		_player.rotation_degrees.lerp(Vector3(get_rotation().x, get_rotation().y, _z_direction), 0.2 * delta) # = _z_direction
 		_gravity(delta)
 	
 	elif not _player.is_on_floor(): _gravity(delta)
 
 
 ## Getter
-func is_prism_skill_active() -> bool:
+func get_is_prism_skill_active() -> bool:
 	if _prism_state == 'on': return true
 	return false
 
@@ -70,13 +70,11 @@ func _box_shape_skill() -> void:
 	# Pulo.
 	if _player.is_on_floor():
 		_player.velocity.y = _JUMP_VELOCITY
-		#_stamina_node.waste(15)
 		_jump_count += 1
 	
 	# Se tacando no chão caso esteja no ar.
 	elif _jump_count >= 1 and !_player.is_on_floor():
 		_player.velocity.y = _JUMP_VELOCITY * (-_FALL_VELOCITY)
-		#_stamina_node.waste(5)
 		_jump_count = 0
 
 
@@ -104,7 +102,7 @@ func _prism_shape_skill() -> void:
 	else: _prism_state = states[0] if _prism_state == states[1] else states[1]
 	
 	_y_direction = 1 if _y_direction == -1 else -1
-	_z_direction = 180 if _shape_control.get_player_collision().rotation_degrees.z == 0 else 0
+	_z_direction = 180 if _player.rotation_degrees.z == 0 else 0
 	
 	#_stamina_node.waste(30)
 

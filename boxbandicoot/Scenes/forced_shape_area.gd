@@ -16,15 +16,15 @@ var _internal_values: Array[int] = [0, 0, 0]
 func _ready() -> void:
 	if _can_become_box: 
 		_internal_values[0] = 1
-		_shape_name = _shape_name_list[0]
+		_shape_name = 'Box'
 		
 	if _can_become_sphere: 
 		_internal_values[1] = 1
-		_shape_name = _shape_name_list[1]
+		_shape_name = 'Sphere'
 		
 	if _can_become_prism: 
 		_internal_values[2] = 1
-		_shape_name = _shape_name_list[2]
+		_shape_name = 'Prism'
 
 
 func _sum_array(array) -> int:
@@ -33,7 +33,7 @@ func _sum_array(array) -> int:
 	return sum
 
 
-func _on_body_entered(body: Node3D) -> void:
+func _on_body_entered(body: Player) -> void:
 	_is_inside = true
 	if _sum_array(_internal_values) == 1: 
 		_shape_control_node.set_shape_lock(_shape_name)
@@ -41,7 +41,8 @@ func _on_body_entered(body: Node3D) -> void:
 		_shape_control_node.set_double_lock(_can_become_box, _can_become_sphere, _can_become_prism)
 
 
-func _on_body_exited(body: Node3D) -> void:
+func _on_body_exited(body: Player) -> void:
 	_is_inside = false
 	_shape_control_node.set_shape_lock()
 	_shape_control_node.set_double_lock()
+	self.queue_free()

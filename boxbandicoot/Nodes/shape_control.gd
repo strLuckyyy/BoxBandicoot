@@ -28,6 +28,7 @@ func _ready() -> void:
 func get_player_collision() -> CollisionShape3D: return _player_collision
 func get_player_obj() -> Node3D: return _player_obj
 func get_is_lock() -> bool: return _is_lock
+func get_is_prism() -> bool: return _is_prism
 
 func set_shape_lock(shape: String = '') -> void:
 	if shape == '': 
@@ -52,21 +53,16 @@ func set_double_lock(value_box: bool = true, value_sphere: bool = true, value_pr
 		return
 
 
-func _physics_process(delta: float) -> void:
-	print('shapes')
-	print('box', _double_lock[0])
-	print('sphere', _double_lock[1])
-	print('prism', _double_lock[2])
-
-
 # Métodos Publicos
 ## Esse método retorna um valor booleano sobre o shape atual do player.
 ## Para usa-lo, coloque no parametro "shape" o nome do shape que você queira verificar.
 func check_current_shape(shape: String = 'Box') -> bool:
 	if _box_node.is_visible() and shape.contains('Box'): 
 		_switch_bool_values(true, false, false); return true
+		
 	elif _prism_node.is_visible() and shape.contains('Prism'):
 		_switch_bool_values(false, true, false); return true
+		
 	elif _sphere_node.is_visible() and shape.contains('Sphere'):
 		_switch_bool_values(false, false, true); return true
 	else: return false

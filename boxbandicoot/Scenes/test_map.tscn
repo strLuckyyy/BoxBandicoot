@@ -1,14 +1,19 @@
-[gd_scene load_steps=8 format=3 uid="uid://cq02mte4enw5s"]
+[gd_scene load_steps=11 format=3 uid="uid://cq02mte4enw5s"]
 
 [ext_resource type="PackedScene" uid="uid://bvjwdmxvb6hgp" path="res://Scenes/player.tscn" id="1_6e1mi"]
-[ext_resource type="PackedScene" uid="uid://d0cdrnjgeyx4y" path="res://Scenes/CircleButton.tscn" id="2_g6uiw"]
 [ext_resource type="PackedScene" uid="uid://bua4ftyloi0jr" path="res://Scenes/CirclePlatform.tscn" id="3_a07os"]
 [ext_resource type="PackedScene" uid="uid://bnby6uvwdv1f0" path="res://UI/gameplay_ui.tscn" id="4_alk5i"]
 [ext_resource type="PackedScene" uid="uid://d2syn4y04lpty" path="res://UI/pause_menu.tscn" id="5_6etj0"]
 [ext_resource type="PackedScene" uid="uid://cv1tc3jam2mfc" path="res://Scenes/ForcedShapeArea.tscn" id="6_ppnjv"]
+[ext_resource type="PackedScene" uid="uid://bblmnbh8bk438" path="res://Nodes/ButtonControl.tscn" id="7_mrbde"]
+[ext_resource type="PackedScene" uid="uid://co4mhetx7cibj" path="res://Nodes/DoorNode.tscn" id="7_na6jp"]
+[ext_resource type="Texture2D" uid="uid://6qe8d4tkuj2n" path="res://Assets/Material/porta.png" id="7_wx2un"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lbsr8"]
 size = Vector3(2.79785, 3.07043, 3.03961)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nlmgs"]
+albedo_texture = ExtResource("7_wx2un")
 
 [node name="TestMap" type="CSGCombiner3D"]
 use_collision = true
@@ -22,20 +27,17 @@ transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -2.961
 size = Vector3(16.3708, 0.001, 21)
 
 [node name="Player" parent="." instance=ExtResource("1_6e1mi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.3, -6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.65896, 3.00286, -2.51972)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, -6.33591e-06, -0.000319622, 9.38023e-05, 0.961615, 0.274402, 0.000305614, -0.274402, 0.961615, 0, 0, 0)
+transform = Transform3D(1, -6.34061e-06, -0.000319623, 9.38023e-05, 0.961615, 0.274402, 0.000305614, -0.274402, 0.961615, -0.00276005, 0.00603962, -0.00178242)
 shadow_enabled = true
-
-[node name="CircleButton" parent="." instance=ExtResource("2_g6uiw")]
-transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -5.00819, 0.5, -2.25902)
 
 [node name="CirclePlatform" parent="." instance=ExtResource("3_a07os")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.48151, 4.56258, -16.8121)
 
 [node name="ForcedShapeArea" parent="." node_paths=PackedStringArray("_shape_control_node") instance=ExtResource("6_ppnjv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.96498, 1.18781, -10.4503)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.91153, 1.18867, -12.8483)
 _shape_control_node = NodePath("../Player/ShapeControlNode")
 _can_become_box = false
 _can_become_prism = true
@@ -51,5 +53,16 @@ shape_control = NodePath("../Player/ShapeControlNode")
 [node name="Pause_Menu" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_6etj0")]
 player = NodePath("../Player")
 
+[node name="DoorNode" parent="." instance=ExtResource("7_na6jp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.56147, 2.37334, -8.79098)
+size = Vector3(4.73895, 3.91858, 0.266113)
+material = SubResource("StandardMaterial3D_nlmgs")
+
+[node name="ButtonControl" parent="." node_paths=PackedStringArray("_current_door") instance=ExtResource("7_mrbde")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.122823, 0.5, -2.49057)
+_button_type = "Prism"
+_current_door = NodePath("../DoorNode")
+
 [editable path="Player"]
 [editable path="Player/CollisionShape3D/OBJ"]
+[editable path="Player/ShapeControlNode"]

@@ -1,0 +1,2166 @@
+[gd_scene load_steps=111 format=3 uid="uid://bi3sj3trkj7n5"]
+
+[ext_resource type="PackedScene" uid="uid://bvjwdmxvb6hgp" path="res://Scenes/player.tscn" id="1_k285m"]
+[ext_resource type="Texture2D" uid="uid://dntdgtnnxn1ct" path="res://Assets/Material/metal_plate_02_diff_1k.png" id="2_catk3"]
+[ext_resource type="PackedScene" uid="uid://bblmnbh8bk438" path="res://Nodes/ButtonControl.tscn" id="3_j7ihy"]
+[ext_resource type="PackedScene" uid="uid://co4mhetx7cibj" path="res://Nodes/DoorNode.tscn" id="4_jxcvv"]
+[ext_resource type="Texture2D" uid="uid://c16aoa50jvl1y" path="res://Assets/Material/cobblestone_floor_06_diff_1k.png" id="5_n4g38"]
+[ext_resource type="Texture2D" uid="uid://b2com2kq8e7pv" path="res://Assets/Material/1(3).png" id="6_vxmw1"]
+[ext_resource type="Texture2D" uid="uid://bdxc75np6tblg" path="res://Assets/Material/metal_grate_rusty_diff_1k.png" id="7_8ph3m"]
+[ext_resource type="Texture2D" uid="uid://bpsk5uub6mx2m" path="res://Assets/Material/1(1).png" id="8_2meg1"]
+[ext_resource type="Texture2D" uid="uid://biqbrkk230eja" path="res://Assets/Material/worn_planks_diff_1k.png" id="9_p2kkc"]
+[ext_resource type="Texture2D" uid="uid://2prxdqp0bywq" path="res://Assets/Material/360_F_443901300_LXiyK38ozsN52TDhsNnkuYEugohdeNFC.jpg" id="10_ojuxg"]
+[ext_resource type="Script" path="res://parede_6.gd" id="11_4glww"]
+[ext_resource type="Texture2D" uid="uid://6qe8d4tkuj2n" path="res://Assets/Material/porta.png" id="12_p8lwv"]
+[ext_resource type="Texture2D" uid="uid://bwajcxsio1ym0" path="res://Assets/Material/metallic-background-with-grunge-scratched-effect.jpg" id="13_qxckr"]
+[ext_resource type="Texture2D" uid="uid://uhu02iljdsfq" path="res://Assets/Material/metal_plate_diff_1k.png" id="14_7185r"]
+[ext_resource type="Texture2D" uid="uid://cg5fp2ghdf5uc" path="res://Assets/Material/rough_wood_diff_1k.png" id="15_hylkb"]
+[ext_resource type="Texture2D" uid="uid://u2ta7huegmtd" path="res://Assets/Material/grip-rusted-steel_albedo.png" id="16_bsdyp"]
+[ext_resource type="Texture2D" uid="uid://bfmtj43c888j5" path="res://Assets/Material/RustyCorrugatedMetalPanel01_1K_BaseColor.png" id="17_jfnen"]
+[ext_resource type="Texture2D" uid="uid://c37k3thx423ly" path="res://Assets/Material/old-metal-slats1_albedo.png" id="18_4r6q1"]
+[ext_resource type="Texture2D" uid="uid://dbe8iey7dsgct" path="res://Assets/Material/Concrete042C_1K-JPG_Color.jpg" id="19_6d2f1"]
+[ext_resource type="PackedScene" uid="uid://bnby6uvwdv1f0" path="res://UI/gameplay_ui.tscn" id="20_cgwna"]
+[ext_resource type="Script" path="res://terreno_csg.gd" id="20_h6xpy"]
+[ext_resource type="PackedScene" uid="uid://d2syn4y04lpty" path="res://UI/pause_menu.tscn" id="21_o3bf5"]
+[ext_resource type="PackedScene" uid="uid://cv1tc3jam2mfc" path="res://Scenes/ForcedShapeArea.tscn" id="23_irxan"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sn1s3"]
+albedo_texture = ExtResource("2_catk3")
+uv1_triplanar = true
+
+[sub_resource type="PrismMesh" id="PrismMesh_lwkbt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ry3vh"]
+albedo_color = Color(0.59, 0.130292, 0.0885, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_0nmj4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kruo3"]
+albedo_color = Color(0.59, 0.172083, 0.0885, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vy45d"]
+albedo_texture = ExtResource("5_n4g38")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_runof"]
+albedo_texture = ExtResource("6_vxmw1")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_37fxf"]
+albedo_texture = ExtResource("6_vxmw1")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dbdyh"]
+albedo_texture = ExtResource("5_n4g38")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wabfr"]
+albedo_texture = ExtResource("6_vxmw1")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_mx7jw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c3k0w"]
+albedo_color = Color(0.148533, 0.16, 0.0912, 1)
+albedo_texture = ExtResource("6_vxmw1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g3iel"]
+albedo_texture = ExtResource("6_vxmw1")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5yar3"]
+albedo_color = Color(0.2097, 0.3, 0.174, 1)
+albedo_texture = ExtResource("6_vxmw1")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8qtcv"]
+albedo_texture = ExtResource("6_vxmw1")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yqxpy"]
+albedo_color = Color(0.2669, 0.34, 0.1938, 1)
+albedo_texture = ExtResource("6_vxmw1")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bhd4p"]
+albedo_color = Color(0.890196, 0.415686, 0.211765, 1)
+albedo_texture = ExtResource("7_8ph3m")
+metallic = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cavc4"]
+albedo_color = Color(0.89, 0.41652, 0.2136, 1)
+albedo_texture = ExtResource("7_8ph3m")
+metallic = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i065x"]
+albedo_texture = ExtResource("7_8ph3m")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6l7ix"]
+albedo_texture = ExtResource("6_vxmw1")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c1kmk"]
+albedo_texture = ExtResource("6_vxmw1")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rmm4d"]
+albedo_texture = ExtResource("8_2meg1")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_npig5"]
+albedo_color = Color(0.5658, 0.61664, 0.82, 1)
+albedo_texture = ExtResource("8_2meg1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wo1cg"]
+albedo_color = Color(0.308, 0.3218, 0.4, 1)
+albedo_texture = ExtResource("8_2meg1")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1v7bf"]
+albedo_color = Color(0.564706, 0.615686, 0.819608, 1)
+albedo_texture = ExtResource("8_2meg1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n8kid"]
+albedo_color = Color(0.5723, 0.764522, 0.97, 1)
+albedo_texture = ExtResource("8_2meg1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sushm"]
+albedo_color = Color(0.2, 0.0893333, 0.034, 1)
+albedo_texture = ExtResource("9_p2kkc")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_av58x"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i4v6y"]
+albedo_color = Color(0.36, 0.2844, 0.2304, 1)
+albedo_texture = ExtResource("9_p2kkc")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ovx0k"]
+albedo_texture = ExtResource("10_ojuxg")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ln2af"]
+albedo_texture = ExtResource("2_catk3")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3w75w"]
+albedo_texture = ExtResource("2_catk3")
+uv1_triplanar = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_inmhs"]
+size = Vector3(3.01639, 10.7886, 8.0929)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_phsdl"]
+albedo_texture = ExtResource("2_catk3")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4844p"]
+albedo_texture = ExtResource("2_catk3")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u1nja"]
+albedo_texture = ExtResource("12_p8lwv")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hqhuv"]
+albedo_texture = ExtResource("12_p8lwv")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_stdw1"]
+albedo_color = Color(0.507, 0.65, 0.6357, 1)
+albedo_texture = ExtResource("13_qxckr")
+metallic = 1.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_51mi6"]
+material = SubResource("StandardMaterial3D_stdw1")
+top_radius = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jd2rd"]
+albedo_color = Color(0.588235, 0.345098, 0.160784, 1)
+albedo_texture = ExtResource("15_hylkb")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_56sdt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bnr47"]
+albedo_color = Color(0.59, 0.345937, 0.1593, 1)
+albedo_texture = ExtResource("15_hylkb")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r0174"]
+albedo_color = Color(0.588235, 0.345098, 0.160784, 1)
+albedo_texture = ExtResource("15_hylkb")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7okdt"]
+albedo_color = Color(0.588235, 0.345098, 0.160784, 1)
+albedo_texture = ExtResource("15_hylkb")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_se3y2"]
+albedo_color = Color(0.41, 0.286863, 0.1927, 1)
+albedo_texture = ExtResource("9_p2kkc")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pvdke"]
+albedo_color = Color(0.411765, 0.286275, 0.192157, 1)
+albedo_texture = ExtResource("9_p2kkc")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1folo"]
+albedo_color = Color(0.588235, 0.345098, 0.160784, 1)
+albedo_texture = ExtResource("15_hylkb")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hstec"]
+albedo_color = Color(0.588235, 0.345098, 0.160784, 1)
+albedo_texture = ExtResource("15_hylkb")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_okmb0"]
+albedo_texture = ExtResource("2_catk3")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gepcn"]
+albedo_texture = ExtResource("2_catk3")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5anxb"]
+albedo_texture = ExtResource("2_catk3")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_55owu"]
+albedo_color = Color(0.656142, 0.851143, 0.599218, 1)
+albedo_texture = ExtResource("14_7185r")
+metallic = 1.0
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7l4fd"]
+albedo_texture = ExtResource("16_bsdyp")
+metallic = 1.0
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_15h7h"]
+albedo_color = Color(0.81, 0.678375, 0.6075, 1)
+albedo_texture = ExtResource("16_bsdyp")
+metallic = 1.0
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mt01q"]
+albedo_color = Color(0.309804, 0.105882, 0.0823529, 1)
+albedo_texture = ExtResource("17_jfnen")
+metallic = 1.0
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l7jme"]
+albedo_color = Color(0.811765, 0.678431, 0.607843, 1)
+albedo_texture = ExtResource("16_bsdyp")
+metallic = 1.0
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aiso1"]
+albedo_color = Color(0.811765, 0.678431, 0.607843, 1)
+albedo_texture = ExtResource("16_bsdyp")
+metallic = 1.0
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ti8sb"]
+albedo_color = Color(0.31, 0.107363, 0.0806, 1)
+metallic = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jtsng"]
+albedo_texture = ExtResource("16_bsdyp")
+metallic = 1.0
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_08pt1"]
+albedo_texture = ExtResource("16_bsdyp")
+metallic = 1.0
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_naktu"]
+albedo_color = Color(0.282, 0.429267, 0.47, 1)
+albedo_texture = ExtResource("18_4r6q1")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bopxu"]
+albedo_texture = ExtResource("18_4r6q1")
+metallic = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1weg8"]
+albedo_texture = ExtResource("18_4r6q1")
+metallic = 0.3
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uin4a"]
+albedo_texture = ExtResource("18_4r6q1")
+metallic = 0.3
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i65m1"]
+albedo_texture = ExtResource("16_bsdyp")
+metallic = 0.5
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8rksh"]
+albedo_texture = ExtResource("16_bsdyp")
+metallic = 0.5
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jbt5b"]
+albedo_texture = ExtResource("16_bsdyp")
+metallic = 1.0
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_15qlw"]
+albedo_color = Color(0.384314, 0.529412, 0.588235, 1)
+albedo_texture = ExtResource("2_catk3")
+metallic = 0.5
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7je5j"]
+albedo_color = Color(0.588235, 0.345098, 0.160784, 1)
+albedo_texture = ExtResource("15_hylkb")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rttbw"]
+albedo_color = Color(0.3835, 0.52805, 0.59, 1)
+albedo_texture = ExtResource("2_catk3")
+metallic = 0.5
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r71as"]
+albedo_color = Color(0.29, 0.16211, 0.1334, 1)
+albedo_texture = ExtResource("13_qxckr")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nn42e"]
+albedo_texture = ExtResource("19_6d2f1")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hx3bi"]
+albedo_texture = ExtResource("19_6d2f1")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wb3q3"]
+albedo_texture = ExtResource("19_6d2f1")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pe1gl"]
+albedo_texture = ExtResource("19_6d2f1")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o34oo"]
+albedo_texture = ExtResource("19_6d2f1")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ryv5q"]
+albedo_texture = ExtResource("19_6d2f1")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qelxg"]
+albedo_texture = ExtResource("2_catk3")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vgo3s"]
+albedo_texture = ExtResource("2_catk3")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2nbco"]
+albedo_color = Color(0.152933, 0.37, 0.1332, 1)
+emission_enabled = true
+emission = Color(0.0704, 0.24, 0.048, 1)
+emission_energy_multiplier = 0.76
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rh2yv"]
+albedo_color = Color(0.890196, 0.415686, 0.211765, 1)
+albedo_texture = ExtResource("7_8ph3m")
+metallic = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_84i5d"]
+albedo_texture = ExtResource("14_7185r")
+metallic = 0.5
+uv1_triplanar = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4w3jb"]
+size = Vector3(216.743, 3.32898, 176.438)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l3m3q"]
+albedo_texture = ExtResource("5_n4g38")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xwasf"]
+size = Vector3(53.4146, 32.8087, 76.8779)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qc8wk"]
+size = Vector3(52.2546, 31.8042, 30.8303)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dfpkm"]
+size = Vector3(132.31, 42.3721, 38.0751)
+
+[node name="MainMap" type="CSGCombiner3D"]
+use_collision = true
+
+[node name="Player" parent="." instance=ExtResource("1_k285m")]
+process_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.5714, 8.23333, 13.9743)
+
+[node name="Skeleton3D" parent="Player/CollisionShape3D/OBJ" index="0"]
+bones/0/rotation = Quaternion(-0.60518, 0.00488746, -0.0151087, 0.79593)
+bones/3/position = Vector3(-0.000131662, -0.00222066, -0.0183921)
+bones/3/rotation = Quaternion(0.0960265, 0, 0, 0.995379)
+bones/3/scale = Vector3(1, 1.02441, 0.973572)
+bones/4/position = Vector3(-0.00019496, 0.0109885, -0.00455175)
+bones/4/rotation = Quaternion(0.874456, 0, 0, 0.485105)
+bones/4/scale = Vector3(1, 0.945324, 1.05319)
+bones/5/rotation = Quaternion(0.00205164, 0.0153075, 0.00422349, 0.999872)
+bones/6/rotation = Quaternion(-0.25955, 0, 0, 0.96573)
+bones/6/scale = Vector3(1, 1, 1)
+bones/7/rotation = Quaternion(0.130095, 0, 0, 0.991502)
+
+[node name="sala1" type="CSGCombiner3D" parent="."]
+process_mode = 1
+
+[node name="escada" type="CSGBox3D" parent="sala1"]
+transform = Transform3D(10.1605, 0, -0.00820421, 0, 0.735644, 0, 0.0177336, 0, 4.70077, 40.1567, 5.45889, -55.3055)
+material = SubResource("StandardMaterial3D_sn1s3")
+
+[node name="escada2" type="CSGBox3D" parent="sala1"]
+transform = Transform3D(9.0906, 0, -0.00610046, 0, 0.735644, 0, 0.0158663, 0, 3.49538, 40.1567, 5.98991, -55.956)
+material = SubResource("StandardMaterial3D_sn1s3")
+
+[node name="simbolo_prisma3" type="MeshInstance3D" parent="sala1"]
+transform = Transform3D(1.61743e-07, -1.414e-14, 0.164572, -3.23485e-07, -3.70024, 0, 3.70024, -3.23485e-07, -7.19367e-09, 19.4248, 23.4313, -47.9341)
+mesh = SubResource("PrismMesh_lwkbt")
+surface_material_override/0 = SubResource("StandardMaterial3D_ry3vh")
+
+[node name="simbolo_esfera" type="MeshInstance3D" parent="sala1"]
+transform = Transform3D(-1.37381e-07, 0, 0.496953, 0, 3.13877, 0, -3.14291, 0, -2.17225e-08, 59.0592, 23.7972, -47.8696)
+mesh = SubResource("SphereMesh_0nmj4")
+surface_material_override/0 = SubResource("StandardMaterial3D_kruo3")
+
+[node name="Interactable" type="Node" parent="sala1"]
+
+[node name="ButtonControl" parent="sala1/Interactable" node_paths=PackedStringArray("_current_door") instance=ExtResource("3_j7ihy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.4462, 5.24252, -25.3502)
+_current_door = NodePath("../DoorNode")
+
+[node name="DoorNode" parent="sala1/Interactable" instance=ExtResource("4_jxcvv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.1213, 8.36419, -57.8212)
+size = Vector3(7.27319, 3.7605, 1.53491)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="sala1/Interactable"]
+transform = Transform3D(0.999925, 0.00160541, 0.012111, -0.012217, 0.131399, 0.991254, -8.80878e-10, -0.991328, 0.131409, 57.3932, 14.4532, -23.6127)
+light_color = Color(0, 0.334262, 0.631493, 1)
+light_energy = 16.0
+spot_range = 11.0704
+spot_angle = 22.4782
+
+[node name="Plataform" type="Node" parent="sala1"]
+
+[node name="piso_csg3" type="CSGBox3D" parent="sala1/Plataform"]
+transform = Transform3D(2.18393, 0.0129858, 0.783419, -0.506638, 0.0720207, -0.0326112, -1.3396, -0.00606783, 1.28953, 30.1725, 4.53033, -21.1244)
+use_collision = true
+size = Vector3(1.40493, 1, 1.68262)
+material = SubResource("StandardMaterial3D_vy45d")
+
+[node name="plataforma_csg" type="CSGBox3D" parent="sala1/Plataform"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.9151, 3.59961, 14.6107)
+use_collision = true
+size = Vector3(8.04468, 2.29932, 5.49292)
+material = SubResource("StandardMaterial3D_runof")
+
+[node name="plataforma_csg2" type="CSGBox3D" parent="sala1/Plataform"]
+transform = Transform3D(6.61074, 0, 0.243107, 0, 1, 0, -1.65682, 0, 0.969999, 45.9847, 3.53571, 7.85655)
+use_collision = true
+size = Vector3(1.17249, 1, 4.22076)
+material = SubResource("StandardMaterial3D_37fxf")
+
+[node name="plataforma_csg5" type="CSGBox3D" parent="sala1/Plataform"]
+transform = Transform3D(3.76384, 0, -0.833664, 0, 1, 0, 5.68159, 0, 0.552272, 28.2186, 3.61749, -3.63628)
+use_collision = true
+size = Vector3(0.681854, 1, 3.59828)
+material = SubResource("StandardMaterial3D_37fxf")
+
+[node name="plataforma_csg8" type="CSGBox3D" parent="sala1/Plataform"]
+transform = Transform3D(6.05573, 0.179354, 0.546757, -1.40959, 0.994718, -0.0238571, -3.77095, -0.0838061, 0.886949, 30.0787, 4.03004, -21.0766)
+use_collision = true
+size = Vector3(0.506821, 1, 3.33894)
+material = SubResource("StandardMaterial3D_37fxf")
+
+[node name="plataforma_csg6" type="CSGBox3D" parent="sala1/Plataform"]
+transform = Transform3D(-1.22945, 0, -0.983593, 0, 1, 0, 6.70338, 0, -0.180399, 27.8379, 2.50205, -0.576254)
+use_collision = true
+size = Vector3(0.94795, 1.4834, 4.4628)
+material = SubResource("StandardMaterial3D_37fxf")
+
+[node name="plataforma_csg7" type="CSGBox3D" parent="sala1/Plataform"]
+transform = Transform3D(6.62366, 0, -0.235413, 0, 1, 0, 1.60439, 0, 0.971895, 29.9881, 3.6271, 7.32565)
+use_collision = true
+size = Vector3(1.20525, 1.4834, 4.61507)
+material = SubResource("StandardMaterial3D_37fxf")
+
+[node name="plataforma_csg3" type="CSGBox3D" parent="sala1/Plataform"]
+transform = Transform3D(6.78683, 0, 0.0911366, 0, 5.33797, 0, -0.621114, 0, 0.995838, 45.2879, -0.495238, 5.90341)
+use_collision = true
+size = Vector3(0.582638, 1.6691, 6.11121)
+material = SubResource("StandardMaterial3D_37fxf")
+
+[node name="plataforma_csg4" type="CSGBox3D" parent="sala1/Plataform"]
+transform = Transform3D(6.78683, 0, 0.0911366, 0, 1.21252, 0, -0.621114, 0, 0.995838, 46.0212, 3.5523, -0.590786)
+use_collision = true
+size = Vector3(0.641433, 1.29288, 8.1323)
+material = SubResource("StandardMaterial3D_37fxf")
+
+[node name="piso_csg" type="CSGBox3D" parent="sala1/Plataform"]
+transform = Transform3D(0.968279, 0, 0.249873, 0, 0.123168, 0, -0.249873, 0, 0.968279, 46.0096, 4.08077, 7.90886)
+use_collision = true
+size = Vector3(7.97078, 1, 3.71808)
+material = SubResource("StandardMaterial3D_dbdyh")
+
+[node name="piso_csg2" type="CSGBox3D" parent="sala1/Plataform"]
+transform = Transform3D(0.971924, 0, -0.235295, 0, 0.123168, 0, 0.235295, 0, 0.971924, 29.9904, 4.35488, 7.39616)
+use_collision = true
+size = Vector3(8.12293, 1, 4.2112)
+material = SubResource("StandardMaterial3D_dbdyh")
+
+[node name="plataforma28" type="CSGBox3D" parent="sala1/Plataform"]
+transform = Transform3D(2.41592, -0.00143999, 0.0787143, 0.0220718, 0.163383, -0.016427, -0.0929287, 0.00136953, 2.04249, 26.7966, 4.37619, 7.67946)
+use_collision = true
+material = SubResource("StandardMaterial3D_wabfr")
+
+[node name="plataforma16" type="MeshInstance3D" parent="sala1/Plataform"]
+transform = Transform3D(-0.312127, -3.21469, -0.174101, 8.94985, -0.111275, -0.0347744, 0.0584644, -0.128259, 4.39386, 29.9948, -1.09442, 7.35453)
+mesh = SubResource("BoxMesh_mx7jw")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_c3k0w")
+
+[node name="plataforma_csg10" type="CSGBox3D" parent="sala1/Plataform"]
+transform = Transform3D(7.94975, 0, -0.0605412, 0, 0.946661, 0, 0.116974, 0, 4.11448, 51.8639, 3.65749, -32.3072)
+use_collision = true
+material = SubResource("StandardMaterial3D_g3iel")
+
+[node name="plataforma_csg14" type="CSGBox3D" parent="sala1/Plataform"]
+transform = Transform3D(2.17288, 0, 2.51768, 0, 0.946661, 0, -1.65529, 0, 3.30493, 49.3631, 0.362095, -38.8043)
+material = SubResource("StandardMaterial3D_5yar3")
+
+[node name="plataforma_csg11" type="CSGBox3D" parent="sala1/Plataform"]
+transform = Transform3D(7.42562, 0.235785, -1.05448, -2.00582, 0.915828, 0.0856175, 2.01225, 0.0428053, 3.9766, 46.2123, 2.02996, -39.6696)
+use_collision = true
+material = SubResource("StandardMaterial3D_8qtcv")
+
+[node name="plataforma17" type="MeshInstance3D" parent="sala1/Plataform"]
+transform = Transform3D(0.271365, -1.54397, 1.55782, -9.36461, -0.0353721, 0.0810534, -0.110689, -0.792615, -3.03817, 30.3353, -0.583581, -21.1673)
+mesh = SubResource("BoxMesh_mx7jw")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_c3k0w")
+
+[node name="plataforma26" type="MeshInstance3D" parent="sala1/Plataform"]
+transform = Transform3D(0.152164, -2.67513, 1.34148, -5.25107, -0.0612867, 0.069797, -0.0620672, -1.37331, -2.61624, 49.8366, -2.56881, -38.1286)
+mesh = SubResource("BoxMesh_mx7jw")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_yqxpy")
+
+[node name="plataforma27" type="MeshInstance3D" parent="sala1/Plataform"]
+transform = Transform3D(0.150501, -3.66218, -0.407337, -8.87375, -0.0753399, 0.070823, -0.233393, 0.502945, -2.95539, 46.4744, -2.56881, -39.7637)
+mesh = SubResource("BoxMesh_mx7jw")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_c3k0w")
+
+[node name="plataforma21" type="MeshInstance3D" parent="sala1/Plataform"]
+transform = Transform3D(0.259935, -0.695405, 2.66709, -9.22799, -0.0554773, 0.0654973, 0.125846, -2.63167, -0.706146, 27.0761, -2.8177, -1.57516)
+mesh = SubResource("BoxMesh_mx7jw")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_c3k0w")
+
+[node name="plataforma_movel" type="CSGBox3D" parent="sala1/Plataform"]
+transform = Transform3D(4.84695, 0, 0, 0, 0.525286, 0, 0, 0, 2.69361, 29.5406, 4.25953, -8.81336)
+use_collision = true
+material = SubResource("StandardMaterial3D_bhd4p")
+
+[node name="plataforma_movel2" type="CSGBox3D" parent="sala1/Plataform"]
+transform = Transform3D(4.84695, 0, 0, 0, 0.525286, 0, 0, 0, 2.69361, 46.75, 4.25953, -13.9029)
+use_collision = true
+material = SubResource("StandardMaterial3D_cavc4")
+
+[node name="plataforma_movel3" type="CSGBox3D" parent="sala1/Plataform"]
+transform = Transform3D(-2.11867e-07, 0, 2.6936, 0, 0.525286, 0, -4.84695, 0, -1.17741e-07, 27.4865, 4.25953, -32.4336)
+use_collision = true
+material = SubResource("StandardMaterial3D_i065x")
+
+[node name="plataforma15" type="MeshInstance3D" parent="sala1/Plataform"]
+transform = Transform3D(2.36793, 4.65138, -1.68027, -2.43304, 4.85851, 0.813215, 1.11521, 0.723445, 5.3419, 42.822, -4.29211, 1.856)
+mesh = SubResource("BoxMesh_mx7jw")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_c3k0w")
+
+[node name="plataforma14" type="MeshInstance3D" parent="sala1/Plataform"]
+transform = Transform3D(1.84769, 0, -4.8436, 0, 10.5504, 0, 3.05884, 0, 2.92577, 46.747, -2.28621, 1.63768)
+mesh = SubResource("BoxMesh_mx7jw")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_c3k0w")
+
+[node name="plataforma_csg12" type="CSGBox3D" parent="sala1/Plataform"]
+transform = Transform3D(7.37708, 0, -1.53455, 0, 1.03337, 0, 2.96497, 0, 3.81808, 36.2454, 3.98691, -43.4446)
+use_collision = true
+material = SubResource("StandardMaterial3D_6l7ix")
+
+[node name="plataforma_csg13" type="CSGBox3D" parent="sala1/Plataform"]
+transform = Transform3D(3.30338, 0, -1.77583, 0, 1.03337, 0, 0.896704, 0, 6.542, 28.3001, 3.98691, -50.3024)
+use_collision = true
+material = SubResource("StandardMaterial3D_c1kmk")
+
+[node name="plataforma_csg9" type="CSGBox3D" parent="sala1/Plataform"]
+transform = Transform3D(-5.51787e-07, 0, 6.79415, 0, 2.01832, 0, -12.6234, 0, -2.96982e-07, 55.9651, 4.23336, -21.8505)
+use_collision = true
+material = SubResource("StandardMaterial3D_rmm4d")
+
+[node name="plataforma22" type="MeshInstance3D" parent="sala1/Plataform"]
+transform = Transform3D(-0.179321, -6.26618, -1.25606, -9.14201, 0.12407, -5.6799e-07, 0.0174124, 0.608442, -12.9358, 55.1766, -1.24041, -21.8505)
+mesh = SubResource("BoxMesh_mx7jw")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_npig5")
+
+[node name="plataforma23" type="MeshInstance3D" parent="sala1/Plataform"]
+transform = Transform3D(-0.066144, -4.85395, -1.96597, -4.00527, 0.114154, -1.5724e-07, 0.0430745, 3.16099, -3.0189, 53.4798, -3.41244, -24.5516)
+mesh = SubResource("BoxMesh_mx7jw")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_npig5")
+
+[node name="plataforma_csg15" type="CSGBox3D" parent="sala1/Plataform"]
+transform = Transform3D(16.5752, 0, -0.018066, 0, 3.29575, 0, 0.0289295, 0, 10.3513, 40.1567, 3.65749, -52.1476)
+use_collision = true
+material = SubResource("StandardMaterial3D_wo1cg")
+
+[node name="plataforma24" type="MeshInstance3D" parent="sala1/Plataform"]
+transform = Transform3D(12.5171, 0, 2.09106, 0, 5.19992, 0, -3.18289, 0, 8.22336, 40.1567, -0.091835, -52.8546)
+mesh = SubResource("BoxMesh_mx7jw")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_1v7bf")
+
+[node name="plataforma25" type="MeshInstance3D" parent="sala1/Plataform"]
+transform = Transform3D(12.4031, 0, -1.31348, 0, 5.19992, 0, 2.2491, 0, 7.24343, 40.1567, -5.25661, -52.7982)
+mesh = SubResource("BoxMesh_mx7jw")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_1v7bf")
+
+[node name="Walls" type="Node" parent="sala1"]
+
+[node name="parede" type="CSGBox3D" parent="sala1/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1.54811, 0, 0, 0, 2.39175, 18.8493, 10.7977, -19.617)
+use_collision = true
+size = Vector3(1, 20.0525, 31.502)
+material = SubResource("StandardMaterial3D_n8kid")
+
+[node name="parede8" type="CSGBox3D" parent="sala1/Walls"]
+transform = Transform3D(-4.37114e-08, -1.54811, 0, 1, -6.76702e-08, 0, 0, 0, 2.39175, 39.6308, 26.8274, -19.617)
+use_collision = true
+size = Vector3(1, 28.7734, 32.2334)
+material = SubResource("StandardMaterial3D_n8kid")
+
+[node name="parede2" type="CSGBox3D" parent="sala1/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1.54811, 0, 0, 0, 2.39175, 59.6849, 10.7977, -19.617)
+use_collision = true
+size = Vector3(1, 20.0525, 31.502)
+material = SubResource("StandardMaterial3D_n8kid")
+
+[node name="parede3" type="CSGBox3D" parent="sala1/Walls"]
+transform = Transform3D(-4.37114e-08, 0, 1.52357, 0, 1.54811, 0, -1, 0, -6.65976e-08, 39.3163, 11.0296, 17.5616)
+use_collision = true
+size = Vector3(1, 20.0525, 28.3376)
+material = SubResource("StandardMaterial3D_n8kid")
+
+[node name="parede4" type="CSGBox3D" parent="sala1/Walls"]
+transform = Transform3D(-4.37114e-08, 0, 1.52357, 0, 1.54811, 0, -1, 0, -6.65976e-08, 39.4539, 11.0296, -57.7697)
+size = Vector3(1, 20.0525, 28.6182)
+material = SubResource("StandardMaterial3D_n8kid")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="sala1/Walls/parede4"]
+transform = Transform3D(1, 0, -1.39266e-12, 0, 1, 0, -5.32907e-15, 0, 1, 0.39209, -1.81283, 0.568972)
+operation = 2
+size = Vector3(3.31543, 2.5007, 4.72485)
+
+[node name="Lights" type="Node" parent="sala1"]
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="sala1/Lights"]
+transform = Transform3D(-0.0575642, -0.998342, -3.62003e-08, -0.706427, 0.0407324, 0.706613, -0.705441, 0.0406756, -0.7076, 40.9097, 12.1553, -57.1509)
+light_energy = 16.0
+light_indirect_energy = 11.378
+spot_range = 9.23274
+spot_angle = 57.6563
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="sala1/Lights"]
+transform = Transform3D(0.108014, 0.994147, 0.00218517, 0.0616951, -0.00889693, 0.998055, 0.992233, -0.107669, -0.062295, 40.2239, 25.5255, -16.9954)
+light_color = Color(1, 0.889167, 0.81, 1)
+
+[node name="DirectionalLight3D3" type="DirectionalLight3D" parent="sala1/Lights"]
+transform = Transform3D(-0.0321635, 0.950738, 0.308323, -0.059119, -0.309752, 0.948978, 0.997733, 0.0122947, 0.0661694, 28.2197, 24.8939, -26.8148)
+light_color = Color(1, 0.889167, 0.81, 1)
+
+[node name="DirectionalLight3D4" type="DirectionalLight3D" parent="sala1/Lights"]
+transform = Transform3D(-0.0107977, 0.999679, -0.0229336, -0.0664301, 0.0221671, 0.997545, 0.997733, 0.0122947, 0.0661694, 47.8977, 24.8939, -26.9073)
+light_color = Color(1, 0.889167, 0.81, 1)
+
+[node name="Ponte" type="Node" parent="sala1"]
+
+[node name="madeira_csg" type="CSGBox3D" parent="sala1/Ponte"]
+transform = Transform3D(0.995258, 0, 0.0972703, 0, 1, 0, -0.0972703, 0, 0.995258, 45.9182, 4.2442, -4.95497)
+use_collision = true
+size = Vector3(2.81421, 0.164551, 0.547607)
+material = SubResource("StandardMaterial3D_sushm")
+
+[node name="madeira_csg2" type="CSGBox3D" parent="sala1/Ponte"]
+transform = Transform3D(0.995258, -0.00408343, 0.0971845, -4.61124e-10, 0.999119, 0.0419803, -0.0972702, -0.0417812, 0.994381, 45.8605, 4.18632, -5.54499)
+use_collision = true
+size = Vector3(2.81421, 0.164551, 0.547607)
+material = SubResource("StandardMaterial3D_sushm")
+
+[node name="madeira_csg3" type="CSGBox3D" parent="sala1/Ponte"]
+transform = Transform3D(0.995258, -0.00861972, 0.0968876, 9.22248e-10, 0.996066, 0.0886162, -0.0972703, -0.0881959, 0.991342, 45.8035, 4.06646, -6.12824)
+use_collision = true
+size = Vector3(2.81421, 0.164551, 0.547607)
+material = SubResource("StandardMaterial3D_sushm")
+
+[node name="madeira_csg4" type="CSGBox3D" parent="sala1/Ponte"]
+transform = Transform3D(0.995258, -0.00861972, 0.0968876, 9.22248e-10, 0.996066, 0.0886162, -0.0972703, -0.0881959, 0.991342, 45.7479, 3.95287, -6.69805)
+use_collision = true
+size = Vector3(2.81421, 0.164551, 0.547607)
+material = SubResource("StandardMaterial3D_sushm")
+
+[node name="madeira_csg5" type="CSGBox3D" parent="sala1/Ponte"]
+transform = Transform3D(0.995258, -0.0295313, 0.092679, -1.8526e-09, 0.952799, 0.303601, -0.0972702, -0.302161, 0.948281, 45.7009, 3.81432, -7.17884)
+use_collision = true
+size = Vector3(2.81421, 0.164551, 0.437866)
+material = SubResource("StandardMaterial3D_sushm")
+
+[node name="madeira_csg6" type="CSGBox3D" parent="sala1/Ponte"]
+transform = Transform3D(0.802494, 0, 0, 0, 2.68631, 0, 0, 0, 1.29361, 44.5909, 4.8935, -4.5774)
+size = Vector3(0.276306, 0.393921, 0.169739)
+material = SubResource("StandardMaterial3D_sushm")
+
+[node name="madeira_csg7" type="CSGBox3D" parent="sala1/Ponte"]
+transform = Transform3D(0.802494, 0, 0, 0, 2.68631, 0, 0, 0, 1.29361, 47.0499, 4.8935, -4.5774)
+size = Vector3(0.276306, 0.393921, 0.169739)
+material = SubResource("StandardMaterial3D_sushm")
+
+[node name="madeira" type="MeshInstance3D" parent="sala1/Ponte"]
+transform = Transform3D(0.171532, 0, 0, 0, 9.22049, 0, 0, 0, 0.142994, 44.782, -0.494945, -6.07318)
+mesh = SubResource("BoxMesh_av58x")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_i4v6y")
+
+[node name="madeira10" type="MeshInstance3D" parent="sala1/Ponte"]
+transform = Transform3D(0.120949, 0, 0, 0, 0.864603, 0.10742, 0, -0.783592, 0.118527, 44.6067, 3.83316, -4.66165)
+mesh = SubResource("BoxMesh_av58x")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_i4v6y")
+
+[node name="madeira11" type="MeshInstance3D" parent="sala1/Ponte"]
+transform = Transform3D(0.120949, 0, 0, 0, 0.864603, 0.10742, 0, -0.783592, 0.118527, 47.0473, 3.83316, -4.66165)
+mesh = SubResource("BoxMesh_av58x")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_i4v6y")
+
+[node name="madeira2" type="MeshInstance3D" parent="sala1/Ponte"]
+transform = Transform3D(0.171532, 0, 0, 0, 9.15858, 0.0194496, 0, -1.23959, 0.143701, 47.0603, -0.494945, -5.73921)
+mesh = SubResource("BoxMesh_av58x")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_i4v6y")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="sala1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.0535, -5.08695, -20.2445)
+size = Vector3(59.0989, 1.5752, 85.729)
+material = SubResource("StandardMaterial3D_ovx0k")
+
+[node name="sala2" type="CSGCombiner3D" parent="."]
+process_mode = 1
+
+[node name="Walls" type="Node" parent="sala2"]
+
+[node name="parede" type="CSGBox3D" parent="sala2/Walls"]
+transform = Transform3D(2.12701, 0, 0, 0, 1, 0, 0, 0, 1, 60.1889, 10.9359, -79.1467)
+use_collision = true
+size = Vector3(0.628906, 31.0001, 43.1913)
+material = SubResource("StandardMaterial3D_ln2af")
+
+[node name="parede5" type="CSGBox3D" parent="sala2/Walls"]
+transform = Transform3D(2.12701, 0, 0, 0, 1, 0, 0, 0, 1, 216.554, 10.9359, -116.425)
+use_collision = true
+size = Vector3(0.628906, 31.0001, 43.1913)
+material = SubResource("StandardMaterial3D_ln2af")
+
+[node name="parede3" type="CSGBox3D" parent="sala2/Walls"]
+transform = Transform3D(-9.29747e-08, 0, 1, 0, 1, 0, -2.12701, 0, -4.37114e-08, 138.443, 10.9359, -100.537)
+use_collision = true
+size = Vector3(0.628906, 31.0001, 157.805)
+material = SubResource("StandardMaterial3D_3w75w")
+
+[node name="passagem_porta" type="CSGBox3D" parent="sala2/Walls/parede3"]
+transform = Transform3D(-2.05506e-08, 0, -0.470143, 0, 1, 0, 1, 0, -4.37115e-08, 0.0216255, 5.4562, 62.106)
+operation = 2
+size = Vector3(7.27344, 5.27243, 1.61066)
+
+[node name="Area3D" type="Area3D" parent="sala2/Walls"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 197.075, 10.9359, -99.8016)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="sala2/Walls/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 7.10543e-15, 0, 1, 0.119095, 4.89429, 3.54645)
+shape = SubResource("BoxShape3D_inmhs")
+
+[node name="parede6" type="CSGBox3D" parent="sala2/Walls/Area3D/CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 1.42109e-14, 0, 1, 0, 0, 0)
+use_collision = true
+size = Vector3(0.628906, 31.0001, 157.805)
+material = SubResource("StandardMaterial3D_3w75w")
+script = ExtResource("11_4glww")
+
+[node name="parede2" type="CSGBox3D" parent="sala2/Walls"]
+transform = Transform3D(2.12701, 0, 0, 0, 1, 0, 0, 0, 1, 18.758, 10.9359, -95.98)
+use_collision = true
+size = Vector3(0.628906, 31.0001, 76.8578)
+material = SubResource("StandardMaterial3D_phsdl")
+
+[node name="parede4" type="CSGBox3D" parent="sala2/Walls"]
+transform = Transform3D(-9.29747e-08, 0, 1, 0, 1, 0, -2.12701, 0, -4.37114e-08, 117.343, 10.9359, -134.882)
+use_collision = true
+size = Vector3(0.628906, 31.0001, 199.19)
+material = SubResource("StandardMaterial3D_4844p")
+
+[node name="Lights" type="Node" parent="sala2"]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="sala2/Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 206.02, 14.6357, -132.1)
+light_color = Color(1, 0, 0, 1)
+light_energy = 3.0
+omni_range = 2.47812
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="sala2/Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 206.02, 14.6357, -122.113)
+light_color = Color(1, 0, 0, 1)
+light_energy = 3.0
+omni_range = 2.47812
+
+[node name="SpotLight3D" type="SpotLight3D" parent="sala2/Lights"]
+transform = Transform3D(-0.0274702, -0.669753, -0.742076, 0.0247759, -0.742584, 0.669295, -0.999316, 6.15094e-08, 0.0369926, 146.255, 14.1625, -127.735)
+light_color = Color(1, 0.33, 0.33, 1)
+light_energy = 3.162
+
+[node name="SpotLight3D7" type="SpotLight3D" parent="sala2/Lights"]
+transform = Transform3D(-0.99859, 0.0130562, 0.0514517, 0.0469184, 0.670442, 0.740477, -0.0248276, 0.741847, -0.670109, 69.0422, 20.4076, -133.689)
+light_color = Color(1, 0.33, 0.33, 1)
+light_energy = 16.0
+spot_range = 21.9895
+spot_angle = 29.0953
+
+[node name="SpotLight3D8" type="SpotLight3D" parent="sala2/Lights"]
+transform = Transform3D(-0.99859, 0.0130562, 0.0514517, 0.0228678, -0.768915, 0.638942, 0.0479041, 0.639218, 0.767532, 69.0422, 20.4076, -102.03)
+light_color = Color(1, 0.33, 0.33, 1)
+light_energy = 16.0
+spot_range = 10.6743
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="sala2/Lights"]
+transform = Transform3D(0.00105096, -0.999596, 0.0283908, 0.0369777, 0.0284102, 0.998912, -0.999316, 8.38765e-09, 0.0369926, 156.687, 18.8245, -126.154)
+light_color = Color(0.301961, 0.533333, 0.858824, 1)
+light_energy = 6.189
+spot_range = 14.6163
+spot_angle = 49.5801
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="sala2/Lights"]
+transform = Transform3D(-0.0103386, -0.960152, -0.279286, 0.326534, -0.267231, 0.906622, -0.945129, -0.0818231, 0.316285, 133.067, 18.9922, -101.691)
+light_color = Color(0.301, 0.533917, 0.86, 1)
+light_energy = 6.0
+spot_range = 8.10075
+spot_angle = 0.01
+
+[node name="SpotLight3D11" type="SpotLight3D" parent="sala2/Lights"]
+transform = Transform3D(-0.0536139, -0.99725, -0.0511763, 0.0377561, -0.0532379, 0.997868, -0.997848, 0.0515674, 0.0405065, 99.0238, 26.6252, -124.226)
+light_color = Color(0.301, 0.533917, 0.86, 1)
+light_energy = 6.0
+spot_range = 21.7108
+spot_angle = 0.01
+
+[node name="SpotLight3D9" type="SpotLight3D" parent="sala2/Lights"]
+transform = Transform3D(-0.0103386, -0.960152, -0.279286, 0.326534, -0.267231, 0.906622, -0.945129, -0.0818231, 0.316285, 155.989, 16.1442, -133.667)
+light_color = Color(0.969602, 0, 0.422808, 1)
+light_energy = 6.0
+spot_range = 34.5102
+spot_angle = 0.01
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="sala2/Lights"]
+transform = Transform3D(-0.0103386, -0.960152, -0.279286, 0.326534, -0.267231, 0.906622, -0.945129, -0.0818231, 0.316285, 157.486, 18.9922, -101.691)
+light_color = Color(0.301, 0.533917, 0.86, 1)
+light_energy = 6.0
+spot_range = 8.10075
+spot_angle = 0.01
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="sala2/Lights"]
+transform = Transform3D(-0.0103386, -0.960152, -0.279286, -0.670474, -0.200557, 0.714312, -0.741861, 0.194639, -0.641684, 200.604, 20.1186, -101.758)
+light_color = Color(0.630332, 0.525105, 0, 1)
+light_energy = 6.0
+spot_range = 8.10075
+spot_angle = 0.01
+
+[node name="Button1" type="Node" parent="sala2"]
+
+[node name="ButtonControl" parent="sala2/Button1" node_paths=PackedStringArray("_current_door") instance=ExtResource("3_j7ihy")]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 39.2877, 26.2754, -66.1566)
+_button_type = "Prism"
+_current_door = NodePath("../DoorNode")
+
+[node name="DoorNode" parent="sala2/Button1" instance=ExtResource("4_jxcvv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.0317, 19.2369, -90.7957)
+size = Vector3(13.7425, 14.3566, 0.266113)
+material = SubResource("StandardMaterial3D_u1nja")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="sala2/Button1"]
+transform = Transform3D(1, 0, 0, 0, -0.273204, -0.961956, 0, 0.961956, -0.273204, 38.4175, 6.06168, -73.963)
+light_color = Color(0, 0.750932, 0.250799, 1)
+light_energy = 16.0
+spot_range = 25.5442
+spot_angle = 21.029
+
+[node name="Button2" type="Node" parent="sala2"]
+
+[node name="ButtonControl2" parent="sala2/Button2" node_paths=PackedStringArray("_current_door") instance=ExtResource("3_j7ihy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 155.916, 11.3878, -132.832)
+_button_type = "Sphere"
+_current_door = NodePath("../DoorNode")
+
+[node name="DoorNode" parent="sala2/Button2" instance=ExtResource("4_jxcvv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 200.512, 16.4491, -100.516)
+size = Vector3(7.71942, 5.55676, 1.46625)
+material = SubResource("StandardMaterial3D_hqhuv")
+
+[node name="Espinhos" type="Node" parent="sala2"]
+
+[node name="espinho" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 49.7697, -1.43259, -129.289)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho2" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 49.7697, -1.43259, -124.797)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho3" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 49.7697, -1.43259, -120.044)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho4" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 49.7697, -1.43259, -115.633)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho5" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 49.7697, -1.43259, -111.131)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho6" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 49.7697, -1.43259, -106.334)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho33" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 55.9277, -1.43259, -129.289)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho34" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 61.8767, -1.43259, -124.797)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho35" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 55.9277, -1.43259, -120.044)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho36" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 61.8767, -1.43259, -115.633)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho37" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 55.9277, -1.43259, -111.131)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho38" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 61.8767, -1.43259, -106.334)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho39" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 61.8767, -1.43259, -129.289)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho40" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 55.9277, -1.43259, -124.797)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho41" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 61.8767, -1.43259, -120.044)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho42" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 55.9277, -1.43259, -115.633)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho43" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 61.8767, -1.43259, -111.131)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho44" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 55.9277, -1.43259, -106.334)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho45" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 67.6042, -1.43259, -129.289)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho46" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 73.5531, -1.43259, -124.797)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho47" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 67.6042, -1.43259, -120.044)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho48" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 73.5531, -1.43259, -115.633)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho49" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 67.6042, -1.43259, -111.131)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho50" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 73.5531, -1.43259, -106.334)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho51" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 73.5531, -1.43259, -129.289)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho52" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 67.6042, -1.43259, -124.797)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho53" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 73.5531, -1.43259, -120.044)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho54" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 67.6042, -1.43259, -115.633)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho55" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 73.5531, -1.43259, -111.131)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho56" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 67.6042, -1.43259, -106.334)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho57" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 79.6347, -1.43259, -129.289)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho58" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 85.5837, -1.43259, -124.797)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho59" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 79.6347, -1.43259, -120.044)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho60" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 85.5837, -1.43259, -115.633)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho61" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 79.6347, -1.43259, -111.131)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho62" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 85.5837, -1.43259, -106.334)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho63" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 85.5837, -1.43259, -129.289)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho64" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 79.6347, -1.43259, -124.797)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho65" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 85.5837, -1.43259, -120.044)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho66" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 79.6347, -1.43259, -115.633)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho67" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 85.5837, -1.43259, -111.131)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho68" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 79.6347, -1.43259, -106.334)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho69" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 91.3112, -1.43259, -129.289)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho70" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 97.2601, -1.43259, -124.797)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho71" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 91.3112, -1.43259, -120.044)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho72" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 97.2601, -1.43259, -115.633)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho73" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 91.3112, -1.43259, -111.131)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho74" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 97.2601, -1.43259, -106.334)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho75" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 97.2601, -1.43259, -129.289)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho76" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 91.3112, -1.43259, -124.797)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho77" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 97.2601, -1.43259, -120.044)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho78" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 91.3112, -1.43259, -115.633)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho79" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 97.2601, -1.43259, -111.131)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho80" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 91.3112, -1.43259, -106.334)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho81" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 103.979, -1.43259, -129.289)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho82" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 109.928, -1.43259, -124.797)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho83" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 103.979, -1.43259, -120.044)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho84" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 109.928, -1.43259, -115.633)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho85" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 103.979, -1.43259, -111.131)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho86" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 109.928, -1.43259, -106.334)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho87" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 109.928, -1.43259, -129.289)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho88" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 103.979, -1.43259, -124.797)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho89" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 109.928, -1.43259, -120.044)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho90" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 103.979, -1.43259, -115.633)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho91" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 109.928, -1.43259, -111.131)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho92" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 103.979, -1.43259, -106.334)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho93" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 115.655, -1.43259, -129.289)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho94" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 121.604, -1.43259, -124.797)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho95" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 115.655, -1.43259, -120.044)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho96" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 121.604, -1.43259, -115.633)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho97" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 115.655, -1.43259, -111.131)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho98" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 121.604, -1.43259, -106.334)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho99" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 121.604, -1.43259, -129.289)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho100" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 115.655, -1.43259, -124.797)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho101" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 121.604, -1.43259, -120.044)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho102" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 115.655, -1.43259, -115.633)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho103" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 121.604, -1.43259, -111.131)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho104" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 115.655, -1.43259, -106.334)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho105" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 127.48, -1.43259, -129.289)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho106" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 133.429, -1.43259, -124.797)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho107" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 127.48, -1.43259, -120.044)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho108" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 133.429, -1.43259, -115.633)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho109" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 127.48, -1.43259, -111.131)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho110" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 133.429, -1.43259, -106.334)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho111" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 133.429, -1.43259, -129.289)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho112" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 127.48, -1.43259, -124.797)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho113" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 133.429, -1.43259, -120.044)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho114" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 127.48, -1.43259, -115.633)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho115" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 133.429, -1.43259, -111.131)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho116" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 127.48, -1.43259, -106.334)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho117" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 139.156, -1.43259, -129.289)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho118" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 145.105, -1.43259, -124.797)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho119" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 139.156, -1.43259, -120.044)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho120" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 145.105, -1.43259, -115.633)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho121" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 139.156, -1.43259, -111.131)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho122" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 145.105, -1.43259, -106.334)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho123" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 145.105, -1.43259, -129.289)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho124" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 139.156, -1.43259, -124.797)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho125" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 145.105, -1.43259, -120.044)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho126" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 139.156, -1.43259, -115.633)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho127" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 145.105, -1.43259, -111.131)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho129" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 151.159, -1.43259, -113.1)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho130" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 151.159, -1.43259, -103.801)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho131" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 151.159, -1.43259, -117.511)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho132" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 151.159, -1.43259, -108.599)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho133" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 157.705, -1.43259, -113.1)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho134" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 157.705, -1.43259, -103.801)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho135" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 157.705, -1.43259, -117.511)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho136" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 157.705, -1.43259, -108.599)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho137" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 165.294, -1.43259, -113.1)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho138" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 165.294, -1.43259, -103.801)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho139" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 165.294, -1.43259, -117.511)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho140" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 165.294, -1.43259, -108.599)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho141" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 170.741, -1.43259, -113.1)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho142" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 170.741, -1.43259, -103.801)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho143" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 170.741, -1.43259, -117.511)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho144" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 170.741, -1.43259, -108.599)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho149" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 165.717, -1.43259, -131.639)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho150" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 165.717, -1.43259, -122.341)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho152" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 165.717, -1.43259, -127.138)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho151" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 170.79, -1.43259, -131.639)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho153" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 170.79, -1.43259, -122.341)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho154" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 170.79, -1.43259, -127.138)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho155" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 176.935, -1.43259, -131.639)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho156" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 176.935, -1.43259, -122.341)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho157" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 176.935, -1.43259, -127.138)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho158" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 182.653, -1.43259, -131.639)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho159" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 182.653, -1.43259, -122.341)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho160" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 182.653, -1.43259, -127.138)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho145" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 177.359, -1.43259, -113.1)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho146" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 177.359, -1.43259, -103.801)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho147" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 177.359, -1.43259, -117.511)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho161" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 183.029, -1.43259, -117.511)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho162" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 188.481, -1.43259, -131.639)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho163" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 188.481, -1.43259, -122.341)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho164" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 188.481, -1.43259, -127.138)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho165" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 188.856, -1.43259, -117.511)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho166" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 194.599, -1.43259, -131.639)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho167" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 194.599, -1.43259, -122.341)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho168" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 194.599, -1.43259, -127.138)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho169" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 194.974, -1.43259, -117.511)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho170" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 200.747, -1.43259, -131.639)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho171" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 200.747, -1.43259, -122.341)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho172" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 200.747, -1.43259, -127.138)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho173" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 201.122, -1.43259, -117.511)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho174" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 206.815, -1.43259, -131.639)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho175" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 206.815, -1.43259, -122.341)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho176" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 206.815, -1.43259, -127.138)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho177" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 207.191, -1.43259, -117.511)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho178" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 212.512, -1.43259, -131.639)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho179" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 212.512, -1.43259, -122.341)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho180" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 212.512, -1.43259, -127.138)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho181" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 212.887, -1.43259, -117.511)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho148" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 177.359, -1.43259, -108.599)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho128" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 139.156, -1.43259, -106.334)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho8" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 49.7697, -1.43259, -96.7439)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho7" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 49.7697, -1.43259, -101.782)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho9" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 43.2179, -1.43259, -120.044)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho10" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 43.2179, -1.43259, -115.633)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho11" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 43.2179, -1.43259, -111.131)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho12" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 43.2179, -1.43259, -106.334)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho13" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 43.2179, -1.43259, -96.7439)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho14" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 43.2179, -1.43259, -101.782)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho15" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 35.9605, -1.43259, -120.044)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho16" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 35.9605, -1.43259, -115.633)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho17" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 35.9605, -1.43259, -111.131)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho18" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 35.9605, -1.43259, -106.334)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho19" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 35.9605, -1.43259, -96.7439)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho20" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 35.9605, -1.43259, -101.782)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho21" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 29.5707, -1.43259, -120.044)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho22" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 29.5707, -1.43259, -115.633)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho23" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 29.5707, -1.43259, -111.131)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho24" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 29.5707, -1.43259, -106.334)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho25" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 29.5707, -1.43259, -96.7439)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho26" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 29.5707, -1.43259, -101.782)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho30" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 23.3357, -1.43259, -106.334)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho31" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 23.3357, -1.43259, -96.7439)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="espinho32" type="MeshInstance3D" parent="sala2/Espinhos"]
+transform = Transform3D(4.04904, 0, 0, 0, 3.2674, 0, 0, 0, 3.6344, 23.3357, -1.43259, -101.782)
+mesh = SubResource("CylinderMesh_51mi6")
+skeleton = NodePath("../..")
+
+[node name="Plataform" type="Node" parent="sala2"]
+
+[node name="madeira_csg" type="CSGBox3D" parent="sala2/Plataform"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 37.8711, 70.2787, 12.9491, -119.55)
+use_collision = true
+size = Vector3(0.588745, 0.685669, 1)
+material = SubResource("StandardMaterial3D_jd2rd")
+
+[node name="madeira8" type="MeshInstance3D" parent="sala2/Plataform"]
+transform = Transform3D(0.99651, 0, 0, 0, -5.57001e-08, -17.3928, 0, 1.27427, -7.60265e-07, 93.8031, 4.14284, -133.454)
+mesh = SubResource("BoxMesh_56sdt")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_bnr47")
+
+[node name="madeira11" type="MeshInstance3D" parent="sala2/Plataform"]
+transform = Transform3D(0.432189, 0, 0, 0, -0.453766, -9.65304, 0, 0.453386, -9.66113, 93.8031, 8.70167, -128.095)
+mesh = SubResource("BoxMesh_56sdt")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_bnr47")
+
+[node name="madeira12" type="MeshInstance3D" parent="sala2/Plataform"]
+transform = Transform3D(0.395087, 0, 0, 0, -0.331058, -7.04413, 0, 0.33078, -7.05004, 101.165, 8.0841, -129.837)
+mesh = SubResource("BoxMesh_56sdt")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_bnr47")
+
+[node name="madeira9" type="MeshInstance3D" parent="sala2/Plataform"]
+transform = Transform3D(0.99651, 0, 0, 0, -5.57001e-08, -17.3928, 0, 1.27427, -7.60265e-07, 101.037, 4.14284, -133.454)
+mesh = SubResource("BoxMesh_56sdt")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_bnr47")
+
+[node name="madeira10" type="MeshInstance3D" parent="sala2/Plataform"]
+transform = Transform3D(1.90402e-15, 2.81346e-08, 10.6306, 0.99651, -2.81346e-08, 0, 4.35589e-08, 0.643644, -4.64678e-07, 97.4238, 4.14284, -134.032)
+mesh = SubResource("BoxMesh_56sdt")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_bnr47")
+
+[node name="madeira_csg2" type="CSGBox3D" parent="sala2/Plataform"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 36.0614, 113.515, 13.0023, -117.791)
+use_collision = true
+material = SubResource("StandardMaterial3D_r0174")
+
+[node name="madeira_csg3" type="CSGBox3D" parent="sala2/Plataform"]
+transform = Transform3D(0.380635, 0, 0, 0, 0.737855, 8.49633, 0, -0.564929, 11.0971, 113.515, 17.4491, -107.286)
+use_collision = true
+material = SubResource("StandardMaterial3D_7okdt")
+
+[node name="madeira_csg5" type="CSGBox3D" parent="sala2/Plataform"]
+transform = Transform3D(-0.0483861, -1.57933, 0.414348, 1.25202, -0.0539481, 0.731784, -0.107053, 0.0828887, 8.37111, 140.85, 13.162, -105.296)
+use_collision = true
+material = SubResource("StandardMaterial3D_se3y2")
+
+[node name="madeira_csg6" type="CSGBox3D" parent="sala2/Plataform"]
+transform = Transform3D(-0.048167, -1.39382, 0.416749, 1.23913, -0.0437492, 1.17216, -0.171132, 0.0755258, 8.37007, 143.858, 12.7779, -105.296)
+use_collision = true
+material = SubResource("StandardMaterial3D_pvdke")
+
+[node name="madeira_csg7" type="CSGBox3D" parent="sala2/Plataform"]
+transform = Transform3D(-0.0774026, -2.98615, 1.6723, 1.38943, -0.356483, 0.0253106, 0.0705556, 3.74415, 1.33616, 155.067, 11.8602, -119.22)
+use_collision = true
+material = SubResource("StandardMaterial3D_1folo")
+
+[node name="madeira_csg8" type="CSGBox3D" parent="sala2/Plataform"]
+transform = Transform3D(-0.141774, 3.82013, 0.73228, 0.559927, 1.71664, -0.00645848, -0.127196, 3.29885, -0.844633, 153.489, 12.4982, -120.992)
+use_collision = true
+material = SubResource("StandardMaterial3D_hstec")
+
+[node name="madeira4" type="MeshInstance3D" parent="sala2/Plataform"]
+transform = Transform3D(0.380635, 0, 0, 0, -4.06204e-08, -14.1997, 0, 0.929287, -6.20688e-07, 113.515, 19.7643, -101.699)
+mesh = SubResource("BoxMesh_56sdt")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_bnr47")
+
+[node name="passagem_plataforma" type="CSGBox3D" parent="sala2/Plataform"]
+transform = Transform3D(17.0846, 0, 0, 0, 18.7769, 0, 0, 0, 15.8298, 156.027, 1.95432, -127.746)
+use_collision = true
+material = SubResource("StandardMaterial3D_okmb0")
+
+[node name="passagem_plataforma5" type="CSGBox3D" parent="sala2/Plataform"]
+transform = Transform3D(19.937, 0, 0, 0, 5.40536, 0, 0, 0, 14.1036, 157.655, 23.141, -127.107)
+use_collision = true
+material = SubResource("StandardMaterial3D_gepcn")
+
+[node name="passagem_plataforma3" type="CSGBox3D" parent="sala2/Plataform"]
+transform = Transform3D(1, 0, 0, 0, 10.2038, 0, 0, 0, 6.22193, 148.075, 15.7968, -127.044)
+size = Vector3(1.09814, 0.910522, 2.2948)
+material = SubResource("StandardMaterial3D_5anxb")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="sala2/Plataform/passagem_plataforma3"]
+transform = Transform3D(1, 0, 0, 0, 0.0980027, 0, 0, 0, 0.160722, -0.0195465, 0.0956951, -0.0981236)
+operation = 2
+size = Vector3(2.18317, 5.41907, 7.51581)
+
+[node name="passagem_plataforma4" type="CSGBox3D" parent="sala2/Plataform"]
+transform = Transform3D(1, 0, 0, 0, 2.75016, 0, 0, 0, 6.22193, 148.013, 12.1984, -127.691)
+operation = 2
+use_collision = true
+size = Vector3(2.24622, 0.429443, 0.981506)
+material = SubResource("StandardMaterial3D_5anxb")
+
+[node name="terreno_metal" type="CSGBox3D" parent="sala2/Plataform"]
+transform = Transform3D(7.99659, 0, 0, 0, 1, 0, 0, 0, 7.44244, 156.584, 11.4327, -127.091)
+use_collision = true
+size = Vector3(1.9541, 0.001, 1.94385)
+material = SubResource("StandardMaterial3D_55owu")
+
+[node name="escada_csg8" type="CSGBox3D" parent="sala2/Plataform"]
+transform = Transform3D(12.2584, 0, 0, 0, 2.14159, 0, 0, 0, 6.02014, 40.2705, 5.24953, -60.9355)
+use_collision = true
+size = Vector3(1, 1.02161, 1.09573)
+material = SubResource("StandardMaterial3D_7l4fd")
+
+[node name="escada_csg7" type="CSGBox3D" parent="sala2/Plataform"]
+transform = Transform3D(12.2584, 0, 0, 0, 2.14159, 0, 0, 0, 6.02014, 40.2705, 3.43703, -62.8829)
+use_collision = true
+size = Vector3(1, 1, 1.53125)
+material = SubResource("StandardMaterial3D_15h7h")
+
+[node name="escada_csg6" type="CSGBox3D" parent="sala2/Plataform"]
+transform = Transform3D(-5.35832e-07, 0, 6.02014, 0, 2.14159, 0, -12.2584, 0, -2.63149e-07, 38.6849, 2.13485, -69.5646)
+use_collision = true
+size = Vector3(1, 1, 1.53125)
+material = SubResource("StandardMaterial3D_7l4fd")
+
+[node name="pilar_csg2" type="CSGBox3D" parent="sala2/Plataform"]
+transform = Transform3D(-5.35832e-07, 0, 6.02014, 0, 2.14159, 0, -12.2584, 0, -2.63149e-07, 34.6228, 14.8224, -75.4057)
+size = Vector3(0.0214844, 10.8889, 0.0810547)
+material = SubResource("StandardMaterial3D_mt01q")
+
+[node name="escada_csg5" type="CSGBox3D" parent="sala2/Plataform"]
+transform = Transform3D(-5.35832e-07, 0, 6.02014, 0, 2.14159, 0, -12.2584, 0, -2.63149e-07, 41.1209, 0.105709, -69.6063)
+size = Vector3(1, 1, 1.53125)
+material = SubResource("StandardMaterial3D_l7jme")
+
+[node name="escada_csg4" type="CSGBox3D" parent="sala2/Plataform"]
+transform = Transform3D(-5.35832e-07, 0, 6.02014, 0, 2.14159, 0, -12.2584, 0, -2.63149e-07, 45.0931, -1.74222, -71.5486)
+use_collision = true
+size = Vector3(0.683105, 0.840088, 1.53125)
+material = SubResource("StandardMaterial3D_7l4fd")
+
+[node name="escada_csg3" type="CSGBox3D" parent="sala2/Plataform"]
+transform = Transform3D(-5.35832e-07, 0, 6.02014, 0, 2.14159, 0, -12.2584, 0, -2.63149e-07, 48.4604, -3.43411, -69.5974)
+use_collision = true
+size = Vector3(0.998535, 0.855225, 1.53125)
+material = SubResource("StandardMaterial3D_aiso1")
+
+[node name="pilar_csg" type="CSGBox3D" parent="sala2/Plataform"]
+transform = Transform3D(0.914286, 0, 0, 0, 7.86012, 0, 0, 0, 1.01141, 34.6441, -0.88643, -58.8071)
+material = SubResource("StandardMaterial3D_ti8sb")
+
+[node name="escada_csg2" type="CSGBox3D" parent="sala2/Plataform"]
+transform = Transform3D(3.74895, 0, 0, 0, 6.40504, 0, 0, 0, 9.59402, 44.5013, -0.808801, -62.4812)
+material = SubResource("StandardMaterial3D_jtsng")
+
+[node name="escada_csg" type="CSGBox3D" parent="sala2/Plataform"]
+transform = Transform3D(8.18299, 0, 0, 0, 7.38901, 0, 0, 0, 1.21354, 39.1246, -0.808801, -66.6612)
+material = SubResource("StandardMaterial3D_08pt1")
+
+[node name="plataforma_csg2" type="CSGBox3D" parent="sala2/Plataform"]
+transform = Transform3D(27.5703, 0, 0, 0, 22.0726, 0, 0, 0, 11.9866, 32.8691, 1.43976, -128.573)
+use_collision = true
+material = SubResource("StandardMaterial3D_naktu")
+
+[node name="plataforma_csg12" type="CSGBox3D" parent="sala2/Plataform"]
+transform = Transform3D(34.0631, 0, 0, 0, 18.8647, 0, 0, 0, 13.6425, 200.138, 1.94259, -107.685)
+use_collision = true
+material = SubResource("StandardMaterial3D_bopxu")
+
+[node name="plataforma21" type="CSGBox3D" parent="sala2/Plataform"]
+transform = Transform3D(11.3488, 0, 0, 0, 13.5494, 0, 0, 0, 13.6425, 212.176, 19.3657, -127.182)
+use_collision = true
+material = SubResource("StandardMaterial3D_1weg8")
+
+[node name="plataforma33" type="CSGBox3D" parent="sala2/Plataform"]
+transform = Transform3D(8.53634, 0, 0, 0, 7.19791, 0, 0, 0, 13.6425, 212.221, 9.14638, -127.172)
+use_collision = true
+material = SubResource("StandardMaterial3D_uin4a")
+
+[node name="escada" type="CSGBox3D" parent="sala2/Plataform"]
+transform = Transform3D(19.1971, 0, 0, 0, 1.38671, 0, 0, 0, 6.95635, 200.138, 11.9324, -104.328)
+use_collision = true
+material = SubResource("StandardMaterial3D_i65m1")
+
+[node name="escada2" type="CSGBox3D" parent="sala2/Plataform"]
+transform = Transform3D(16.0037, 0, 0, 0, 1.3548, 0, 0, 0, 4.21992, 200.138, 13.0801, -103.012)
+use_collision = true
+size = Vector3(1, 1.07813, 1.00912)
+material = SubResource("StandardMaterial3D_8rksh")
+
+[node name="plataforma_csg3" type="CSGBox3D" parent="sala2/Plataform"]
+transform = Transform3D(-8.69396e-07, 0, 6.83681, 0, 1.20087, 0, -19.8895, 0, -2.98846e-07, 96.0628, 13.2092, -124.509)
+use_collision = true
+material = SubResource("StandardMaterial3D_jbt5b")
+
+[node name="plataforma_csg5" type="CSGBox3D" parent="sala2/Plataform"]
+transform = Transform3D(-7.79928e-07, 0, 6.83681, 0, 1.20087, 0, -17.8427, 0, -2.98846e-07, 132.861, 13.2092, -108.197)
+use_collision = true
+material = SubResource("StandardMaterial3D_15qlw")
+
+[node name="madeira_csg4" type="CSGBox3D" parent="sala2/Plataform"]
+transform = Transform3D(-36.4429, 0, -0.0237765, 0, 0.703414, 0, 0.549589, 0, -1.57661, 142.986, 12.2189, -102.031)
+use_collision = true
+material = SubResource("StandardMaterial3D_7je5j")
+
+[node name="plataforma_csg6" type="CSGBox3D" parent="sala2/Plataform"]
+transform = Transform3D(-5.21717e-07, 0, 6.83681, 0, 1.07648, 0, -11.9355, 0, -2.98846e-07, 132.85, 12.212, -115.16)
+use_collision = true
+size = Vector3(1.03564, 1, 1)
+material = SubResource("StandardMaterial3D_rttbw")
+
+[node name="plataforma_csg4" type="CSGBox3D" parent="sala2/Plataform"]
+transform = Transform3D(-8.42629e-07, 0, 3.18415, 0, 4.1208, 0, -19.2771, 0, -1.39184e-07, 100.443, 13.2092, -124.509)
+use_collision = true
+material = SubResource("StandardMaterial3D_jbt5b")
+
+[node name="pilar_csg3" type="CSGBox3D" parent="sala2/Plataform"]
+transform = Transform3D(2.20583e-14, 4.04578e-08, 0.757968, 11.5447, -4.04578e-08, 0, 5.04636e-07, 0.925568, -3.31318e-08, 164.206, 16.2786, -120.82)
+use_collision = true
+material = SubResource("StandardMaterial3D_r71as")
+
+[node name="pilar_csg4" type="CSGBox3D" parent="sala2/Plataform"]
+transform = Transform3D(2.20583e-14, 4.04578e-08, 0.757968, 11.5447, -4.04578e-08, 0, 5.04636e-07, 0.925568, -3.31318e-08, 164.011, 16.4839, -133.135)
+use_collision = true
+material = SubResource("StandardMaterial3D_r71as")
+
+[node name="plataforma_csg7" type="CSGBox3D" parent="sala2/Plataform"]
+transform = Transform3D(-5.28218e-07, 0, 3.18415, 0.51362, 1.16156, 5.91577e-09, -12.0733, 0.0494151, -1.39058e-07, 149.612, 13.2092, -106.722)
+use_collision = true
+material = SubResource("StandardMaterial3D_nn42e")
+
+[node name="plataforma_csg9" type="CSGBox3D" parent="sala2/Plataform"]
+transform = Transform3D(-4.86188e-07, 0, 3.18415, -1.16553, 1.72146, -1.45849e-08, -11.0615, -0.181389, -1.38417e-07, 158.958, 13.2092, -106.524)
+use_collision = true
+material = SubResource("StandardMaterial3D_hx3bi")
+
+[node name="plataforma_csg10" type="CSGBox3D" parent="sala2/Plataform"]
+transform = Transform3D(-4.99496e-07, 5.6589e-16, 3.18415, -2.39593, 1.25284, -2.91826e-08, -11.1731, -0.268654, -1.3609e-07, 195.107, 8.94357, -115.71)
+use_collision = true
+material = SubResource("StandardMaterial3D_wb3q3")
+
+[node name="plataforma_csg11" type="CSGBox3D" parent="sala2/Plataform"]
+transform = Transform3D(-3.23426e-07, 5.44871e-16, 3.18415, -1.56084, 1.20597, -2.93607e-08, -7.23262, -0.260255, -1.36051e-07, 204.354, 8.94357, -116.997)
+use_collision = true
+material = SubResource("StandardMaterial3D_pe1gl")
+
+[node name="plataforma_csg8" type="CSGBox3D" parent="sala2/Plataform"]
+transform = Transform3D(-1.01024, -0.0177634, 2.6928, -2.12303, 1.71846, -0.0126647, -11.8533, -0.306277, -0.227235, 154.278, 12.6392, -106.722)
+use_collision = true
+material = SubResource("StandardMaterial3D_o34oo")
+
+[node name="plataforma_csg" type="CSGBox3D" parent="sala2/Plataform"]
+transform = Transform3D(10.5067, 0, 0, 0, 4.60974, 0, 0, 0, 8.31325, 24.0941, -2.99046, -85.7273)
+use_collision = true
+material = SubResource("StandardMaterial3D_ryv5q")
+
+[node name="parede_csg" type="CSGBox3D" parent="sala2/Plataform"]
+transform = Transform3D(40.9882, 0, 0, 0, 16.3592, 0, 0, 0, 7.39987, 39.2958, 4.12987, -91.4482)
+use_collision = true
+material = SubResource("StandardMaterial3D_qelxg")
+
+[node name="parede_csg2" type="CSGBox3D" parent="sala2/Plataform"]
+transform = Transform3D(26.8688, 0, 0, 0, 14.7872, 0, 0, 0, 7.39987, 46.0701, 19.4668, -91.4997)
+use_collision = true
+material = SubResource("StandardMaterial3D_vgo3s")
+
+[node name="simbolo_prisma" type="MeshInstance3D" parent="sala2/Plataform"]
+transform = Transform3D(1.61743e-07, -1.414e-14, 0.164572, -3.23486e-07, -3.70024, 0, 3.70024, -3.23486e-07, -7.19366e-09, 59.4527, 23.2979, -72.6463)
+mesh = SubResource("PrismMesh_lwkbt")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_2nbco")
+
+[node name="simbolo_prisma2" type="MeshInstance3D" parent="sala2/Plataform"]
+transform = Transform3D(3.70024, 3.23485e-07, -1.43873e-08, 3.23485e-07, -3.70024, 0, -3.23485e-07, -2.828e-14, -0.164572, 37.1893, 24.0107, -134.206)
+mesh = SubResource("PrismMesh_lwkbt")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ry3vh")
+
+[node name="plataforma_movel" type="CSGBox3D" parent="sala2/Plataform"]
+transform = Transform3D(4.84695, 0, 0, 0, 0.525286, 0, 0, 0, 2.69361, 188.771, 12.0585, -126.391)
+size = Vector3(1.24622, 1, 1)
+material = SubResource("StandardMaterial3D_rh2yv")
+
+[node name="Area3D" type="Area3D" parent="sala2/Plataform"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.47299)
+monitorable = false
+
+[node name="terreno_csg" type="CSGBox3D" parent="sala2/Plataform/Area3D"]
+transform = Transform3D(20.791, 0, 0, 0, 1, 0, 0, 0, 39.2664, 118.427, -4.49147, -100.876)
+use_collision = true
+size = Vector3(9.63817, 1, 1.99957)
+material = SubResource("StandardMaterial3D_84i5d")
+script = ExtResource("20_h6xpy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="sala2/Plataform/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 107.871, -4.80718, -54.8435)
+shape = SubResource("BoxShape3D_4w3jb")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="sala2"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 117.961, 26.46, -95.9965)
+size = Vector3(199.956, 1, 78.7465)
+material = SubResource("StandardMaterial3D_l3m3q")
+
+[node name="UI" type="Node" parent="."]
+
+[node name="Gameplay_UI" parent="UI" node_paths=PackedStringArray("stamina_node", "shape_control") instance=ExtResource("20_cgwna")]
+stamina_node = NodePath("../../Player/StaminaNode")
+shape_control = NodePath("../../Player/ShapeControlNode")
+
+[node name="Pause_Menu" parent="UI" node_paths=PackedStringArray("player") instance=ExtResource("21_o3bf5")]
+player = NodePath("../../Player")
+
+[node name="ForcedShapeArea" parent="." node_paths=PackedStringArray("_shape_control_node") instance=ExtResource("23_irxan")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.8806, -4.29935, -3.81013)
+monitorable = false
+_shape_control_node = NodePath("../Player/ShapeControlNode")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ForcedShapeArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.40649, 15.9043, -15.5655)
+shape = SubResource("BoxShape3D_xwasf")
+
+[node name="ForcedShapeArea2" parent="." node_paths=PackedStringArray("_shape_control_node") instance=ExtResource("23_irxan")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.8806, -4.29935, -105.747)
+monitorable = false
+priority = 1
+_shape_control_node = NodePath("../Player/ShapeControlNode")
+_can_become_box = false
+_can_become_prism = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ForcedShapeArea2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.91427, 15.4021, 30.8402)
+shape = SubResource("BoxShape3D_qc8wk")
+
+[node name="ForcedShapeArea3" parent="." node_paths=PackedStringArray("_shape_control_node") instance=ExtResource("23_irxan")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 132.9, 2.24162, -125.404)
+monitorable = false
+priority = 2
+_shape_control_node = NodePath("../Player/ShapeControlNode")
+_can_become_box = false
+_can_become_sphere = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ForcedShapeArea3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.6552, 5.93872, 9.56059)
+shape = SubResource("BoxShape3D_dfpkm")
+
+[connection signal="body_entered" from="sala2/Walls/Area3D" to="sala2/Walls/Area3D/CollisionShape3D/parede6" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="sala2/Plataform/Area3D" to="sala2/Plataform/Area3D/terreno_csg" method="_on_area_3d_body_entered"]
+
+[editable path="Player"]
+[editable path="Player/CollisionShape3D/OBJ"]

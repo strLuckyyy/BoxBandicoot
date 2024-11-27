@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://bblmnbh8bk438"]
+
+[ext_resource type="PackedScene" uid="uid://h44xpk7n3iwe" path="res://Assets/Modelos 3D/teste_botão_triangulo_anim1.fbx" id="1_hwjaj"]
+[ext_resource type="Script" path="res://Nodes/button_control.gd" id="1_v6qo0"]
+[ext_resource type="PackedScene" uid="uid://34eme04en3ft" path="res://Assets/Modelos 3D/teste_botão_quadrado_anim1.fbx" id="2_x0h5n"]
+[ext_resource type="PackedScene" uid="uid://dtdi6x4f515q3" path="res://Assets/Modelos 3D/teste_botão_redondo_anim1.fbx" id="3_wg0s0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yaws3"]
+size = Vector3(1.32513, 0.773621, 1.54028)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fysfg"]
+size = Vector3(0.0572662, 0.0138855, 0.0610428)
+
+[node name="ButtonControl" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.169217)
+script = ExtResource("1_v6qo0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0296936, 0.748077, -0.110474)
+shape = SubResource("BoxShape3D_yaws3")
+
+[node name="box_button" parent="CollisionShape3D" instance=ExtResource("2_x0h5n")]
+transform = Transform3D(33, 0, 0, 0, 33, 0, 0, 0, 33, -0.49269, -0.748077, 0.191082)
+
+[node name="sphere_button" parent="CollisionShape3D" instance=ExtResource("3_wg0s0")]
+transform = Transform3D(33, 0, 0, 0, 36.96, 0, 0, 0, 33, -0.482885, -0.748077, -0.072612)
+visible = false
+
+[node name="prism_button" parent="CollisionShape3D" instance=ExtResource("1_hwjaj")]
+transform = Transform3D(24.981, 0, 0, 0, 23.562, 0, 0, 0, 33, -0.0293196, -0.748077, 0.11651)
+visible = false
+
+[node name="StaticBody3D" type="StaticBody3D" parent="CollisionShape3D"]
+transform = Transform3D(33, 0, 0, 0, 33, 0, 0, 0, 33, -0.0286798, -0.468613, -0.0270755)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CollisionShape3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_fysfg")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
